@@ -1,0 +1,15 @@
+hari,biaya_iklan_ribu,pengunjung,promo_aktif,produk_terjual,pendapatan_ribu
+Senin_M1,20,45,Tidak,30,750
+Selasa_M1,30,58,Ya,40,1000
+Rabu_M1,10,28,Tidak,20,500
+Kamis_M1,40,72,Ya,55,1375
+Jumat_M1,50,85,Ya,60,1500
+Sabtu_M1,65,110,Ya,75,1875
+Minggu_M1,55,95,Ya,68,1700
+Senin_M2,25,50,Tidak,35,875
+Selasa_M2,35,65,Ya,45,1125
+Rabu_M2,15,35,Tidak,25,625
+Kamis_M2,45,80,Ya,58,1450
+Jumat_M2,55,90,Ya,65,1625
+Sabtu_M2,70,120,Ya,82,2050
+Minggu_M2,60,105,Ya,72,1800

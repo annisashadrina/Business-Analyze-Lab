@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Method Explorer — Learning Lab</title>
+  <meta name="description" content="Pilih metode analisis data yang tepat menggunakan wizard pohon keputusan interaktif berdasarkan pertanyaan dan tujuan bisnis Anda.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-page-id="method-explorer">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="brand-link">
+          <div class="brand-icon">BA</div>
+          <div class="brand-info">
+            <h1>Learning Lab</h1>
+            <span>Business Analysis</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Progres Belajar</span>
+          <strong id="sidebar-progress-text">0% Selesai</strong>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="sidebar-progress-fill"></div>
+        </div>
+      </div>
+
+            <nav class="sidebar-nav">
+        <!-- Group 0: Dashboard -->
+        <div class="nav-group">
+          <ul class="nav-list">
+            <li>
+              <a href="../index.html" class="nav-item-link" data-lesson-id="dashboard">
+                <span class="nav-item-left"><span class="nav-icon">◎</span> Dashboard & Alur</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Mulai dari Sini -->
+        <div class="nav-group">
+          <div class="nav-group-title">Mulai dari Sini</div>
+          <ul class="nav-list">
+            <li>
+              <a href="intro.html" class="nav-item-link" data-lesson-id="intro">
+                <span class="nav-item-left"><span class="nav-icon">01</span> Pengantar BA & Kasus</span>
+                <span class="nav-status-badge" data-lesson-badge="intro">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Dasar Data -->
+        <div class="nav-group">
+          <div class="nav-group-title">Dasar Data</div>
+          <ul class="nav-list">
+            <li>
+              <a href="fundamentals.html" class="nav-item-link" data-lesson-id="fundamentals">
+                <span class="nav-item-left"><span class="nav-icon">02</span> Data Fundamentals</span>
+                <span class="nav-status-badge" data-lesson-badge="fundamentals">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="exploration.html" class="nav-item-link" data-lesson-id="exploration">
+                <span class="nav-item-left"><span class="nav-icon">03</span> Data Exploration</span>
+                <span class="nav-status-badge" data-lesson-badge="exploration">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="preparation.html" class="nav-item-link" data-lesson-id="preparation">
+                <span class="nav-item-left"><span class="nav-icon">04</span> Data Preparation</span>
+                <span class="nav-status-badge" data-lesson-badge="preparation">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Metode Analisis -->
+        <div class="nav-group">
+          <div class="nav-group-title">Metode Analisis</div>
+          <ul class="nav-list">
+            <li>
+              <a href="method-explorer.html" class="nav-item-link active" data-lesson-id="method-explorer">
+                <span class="nav-item-left"><span class="nav-icon">05</span> Method Explorer</span>
+                <span class="nav-status-badge" data-lesson-badge="method-explorer">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="regression.html" class="nav-item-link" data-lesson-id="regression">
+                <span class="nav-item-left"><span class="nav-icon">06</span> Regression Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="regression">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="classification.html" class="nav-item-link" data-lesson-id="classification">
+                <span class="nav-item-left"><span class="nav-icon">07</span> Classification Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="classification">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="clustering.html" class="nav-item-link" data-lesson-id="clustering">
+                <span class="nav-item-left"><span class="nav-icon">08</span> Clustering Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="clustering">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="association-rules.html" class="nav-item-link" data-lesson-id="association-rules">
+                <span class="nav-item-left"><span class="nav-icon">09</span> Association Rules</span>
+                <span class="nav-status-badge" data-lesson-badge="association-rules">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="ann.html" class="nav-item-link" data-lesson-id="ann">
+                <span class="nav-item-left"><span class="nav-icon">10</span> ANN Visualizer</span>
+                <span class="nav-status-badge" data-lesson-badge="ann">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="text-mining.html" class="nav-item-link" data-lesson-id="text-mining">
+                <span class="nav-item-left"><span class="nav-icon">11</span> Text Mining Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="text-mining">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Praktik & Evaluasi -->
+        <div class="nav-group">
+          <div class="nav-group-title">Praktik & Evaluasi</div>
+          <ul class="nav-list">
+            <li>
+              <a href="project-workspace.html" class="nav-item-link" data-lesson-id="project-workspace">
+                <span class="nav-item-left"><span class="nav-icon">12</span> Project Workspace</span>
+                <span class="nav-status-badge" data-lesson-badge="project-workspace">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="quiz.html" class="nav-item-link" data-lesson-id="quiz">
+                <span class="nav-item-left"><span class="nav-icon">✓</span> Kuis & Review</span>
+                <span class="nav-status-badge" data-lesson-badge="quiz">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" aria-label="Buka Menu">☰</button>
+          <div class="breadcrumbs">
+            <a href="../index.html">Beranda</a>
+            <span class="separator">/</span>
+            <span>Metode Analisis</span>
+            <span class="separator">/</span>
+            <span class="current">Method Explorer</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button id="btn-toggle-complete" class="complete-toggle-btn">
+            <span>○</span> Tandai Selesai
+          </button>
+          <button id="theme-toggle-btn" class="theme-toggle-btn">
+            <span class="icon">☀️</span> Mode Terang
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <div class="page-category-tag">Modul 05 • Navigasi Metodologi</div>
+          <h1 class="page-title">Method Explorer: Memilih Metode Sesuai Pertanyaan Bisnis</h1>
+          <p class="page-lead">
+            Kesalahan paling sering terjadi pada mahasiswa adalah memilih algoritma karena terlihat canggih, bukan karena cocok dengan pertanyaan bisnis dan struktur datanya. Gunakan wizard interaktif ini untuk menemukan metode yang tepat.
+          </p>
+        </div>
+
+        <!-- Learning Objective Card -->
+        <div class="learning-objective-card">
+          <div class="objective-icon">🧭</div>
+          <div class="objective-content">
+            <h3>Tujuan Pembelajaran Modul Ini:</h3>
+            <ul class="objective-list">
+              <li>Mampu memetakan pertanyaan bisnis ke dalam rumpun analitik: Supervised vs Unsupervised.</li>
+              <li>Membedakan kebutuhan data antara Regresi (angka kontinu), Klasifikasi (kategori), Clustering (jarak), dan Association Rules (transaksi).</li>
+              <li>Menggunakan wizard pohon keputusan bercabang untuk merekomendasikan metode analisis.</li>
+              <li>Menyadari jebakan umum (pitfall) pada setiap metode agar tidak salah interpretasi hasil.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Interactive Decision Tree Wizard -->
+        <div class="wizard-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); border-bottom: 1px solid var(--border-subtle); padding-bottom: var(--space-3);">
+            <span class="badge badge-teal">Pohon Keputusan Interaktif</span>
+            <button id="btn-reset-wizard" class="btn btn-secondary btn-sm">Mulai Ulang Pertanyaan 🔄</button>
+          </div>
+
+          <div id="wizard-step-container">
+            <!-- Dynamically rendered by method-explorer.js -->
+          </div>
+
+          <div id="wizard-result-card" class="card" style="display: none; margin-top: var(--space-6); background: rgba(99, 102, 241, 0.1); border-color: var(--color-brand-400);">
+            <!-- Rendered by method-explorer.js -->
+          </div>
+        </div>
+
+        <!-- Full Method Knowledge Directory -->
+        <div style="margin-top: var(--space-10);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-6);">
+            <div>
+              <h2 style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); color: #ffffff;">
+                Katalog Lengkap Metode Analisis
+              </h2>
+              <p style="font-size: var(--font-size-sm); color: var(--text-muted);">
+                Pelajari rangkuman karakteristik, tujuan, dan batasan tiap metode:
+              </p>
+            </div>
+
+            <!-- Filter Pills -->
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <button class="filter-pill btn btn-sm btn-outline active" data-filter="all">Semua Metode</button>
+              <button class="filter-pill btn btn-sm btn-outline" data-filter="supervised">Supervised</button>
+              <button class="filter-pill btn btn-sm btn-outline" data-filter="unsupervised">Unsupervised</button>
+              <button class="filter-pill btn btn-sm btn-outline" data-filter="specialized">Khusus (NLP/ANN)</button>
+            </div>
+          </div>
+
+          <div class="tracks-grid">
+            <!-- Regression -->
+            <div class="module-card method-catalog-card" data-category="supervised">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">📈</div>
+                <span class="badge badge-brand">Supervised</span>
+              </div>
+              <h3 class="module-title">Linear Regression</h3>
+              <p class="module-desc">Memprediksi angka kontinu (rupiah, penjualan, durasi) berdasarkan relasi matematis variabel input.</p>
+              <div class="module-meta">
+                <span>Target: Angka Kontinu</span>
+                <a href="regression.html" style="color: var(--color-brand-400); font-weight: 600; text-decoration: none;">Buka Lab →</a>
+              </div>
+            </div>
+
+            <!-- Classification -->
+            <div class="module-card method-catalog-card" data-category="supervised">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">🎯</div>
+                <span class="badge badge-brand">Supervised</span>
+              </div>
+              <h3 class="module-title">Classification (Decision Tree / Naive Bayes)</h3>
+              <p class="module-desc">Memetakan data pelanggan ke dalam label kelas diskrit (misal: Churn vs Tetap, Bayar vs Gagal).</p>
+              <div class="module-meta">
+                <span>Target: Kategori Kelas</span>
+                <a href="classification.html" style="color: var(--color-brand-400); font-weight: 600; text-decoration: none;">Buka Lab →</a>
+              </div>
+            </div>
+
+            <!-- Clustering -->
+            <div class="module-card method-catalog-card" data-category="unsupervised">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">👥</div>
+                <span class="badge badge-teal">Unsupervised</span>
+              </div>
+              <h3 class="module-title">Clustering (K-Means)</h3>
+              <p class="module-desc">Mengelompokkan baris data berdasarkan kedekatan jarak fitur belanja tanpa butuh label target awal.</p>
+              <div class="module-meta">
+                <span>Target: Unlabeled Data</span>
+                <a href="clustering.html" style="color: var(--color-accent-teal); font-weight: 600; text-decoration: none;">Buka Lab →</a>
+              </div>
+            </div>
+
+            <!-- Association Rules -->
+            <div class="module-card method-catalog-card" data-category="unsupervised">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">🛒</div>
+                <span class="badge badge-teal">Pattern Mining</span>
+              </div>
+              <h3 class="module-title">Association Rules (Apriori)</h3>
+              <p class="module-desc">Menemukan kombinasi item produk kasir yang sering dibeli bersamaan untuk bundling dan tata letak toko.</p>
+              <div class="module-meta">
+                <span>Target: Struk Transaksi</span>
+                <a href="association-rules.html" style="color: var(--color-accent-teal); font-weight: 600; text-decoration: none;">Buka Lab →</a>
+              </div>
+            </div>
+
+            <!-- ANN -->
+            <div class="module-card method-catalog-card" data-category="specialized">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">⚡</div>
+                <span class="badge badge-brand">Deep Learning</span>
+              </div>
+              <h3 class="module-title">ANN (Artificial Neural Network)</h3>
+              <p class="module-desc">Jaringan berlapis neuron untuk memodelkan interaksi fitur kompleks non-linear multi-dimensi.</p>
+              <div class="module-meta">
+                <span>Target: Kompleks Non-Linear</span>
+                <a href="ann.html" style="color: var(--color-brand-400); font-weight: 600; text-decoration: none;">Buka Lab →</a>
+              </div>
+            </div>
+
+            <!-- Text Mining -->
+            <div class="module-card method-catalog-card" data-category="specialized">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">💬</div>
+                <span class="badge badge-teal">NLP / Sentimen</span>
+              </div>
+              <h3 class="module-title">Text Mining & Sentimen</h3>
+              <p class="module-desc">Ekstraksi opini dan sentimen dari ulasan teks pelanggan Google Maps melalui pipeline pemrosesan kata.</p>
+              <div class="module-meta">
+                <span>Target: Teks Bebas</span>
+                <a href="text-mining.html" style="color: var(--color-accent-teal); font-weight: 600; text-decoration: none;">Buka Lab →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Panel -->
+        <div class="summary-panel">
+          <h3 class="summary-title">📌 Ringkasan Penting Materi Ini</h3>
+          <ul class="summary-list">
+            <li><strong>Mulai dari target:</strong> Apakah target Anda angka (Regresi) atau kategori (Klasifikasi)?</li>
+            <li><strong>Tidak ada target? Gunakan Unsupervised:</strong> Kelompokkan pelanggan dengan Clustering atau cari kombinasi menu kasir dengan Association Rules.</li>
+            <li><strong>Pahami keterbatasan:</strong> Setiap model memiliki asumsi data yang harus divalidasi sebelum disajikan ke manajemen.</li>
+          </ul>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <a id="btn-lesson-prev" class="lesson-nav-btn prev">← Data Preparation</a>
+          <a id="btn-lesson-next" class="lesson-nav-btn next">Lanjutkan ke Regression Lab →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/data-loader.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/method-explorer.js"></script>
+</body>
+</html>

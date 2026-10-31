@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classification Lab — Learning Lab</title>
+  <meta name="description" content="Prediksi kategori customer churn dengan Decision Tree, live Confusion Matrix, evaluasi Akurasi, Presisi, Recall, dan F1-Score.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-page-id="classification">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="brand-link">
+          <div class="brand-icon">BA</div>
+          <div class="brand-info">
+            <h1>Learning Lab</h1>
+            <span>Business Analysis</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Progres Belajar</span>
+          <strong id="sidebar-progress-text">0% Selesai</strong>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="sidebar-progress-fill"></div>
+        </div>
+      </div>
+
+            <nav class="sidebar-nav">
+        <!-- Group 0: Dashboard -->
+        <div class="nav-group">
+          <ul class="nav-list">
+            <li>
+              <a href="../index.html" class="nav-item-link" data-lesson-id="dashboard">
+                <span class="nav-item-left"><span class="nav-icon">◎</span> Dashboard & Alur</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Mulai dari Sini -->
+        <div class="nav-group">
+          <div class="nav-group-title">Mulai dari Sini</div>
+          <ul class="nav-list">
+            <li>
+              <a href="intro.html" class="nav-item-link" data-lesson-id="intro">
+                <span class="nav-item-left"><span class="nav-icon">01</span> Pengantar BA & Kasus</span>
+                <span class="nav-status-badge" data-lesson-badge="intro">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Dasar Data -->
+        <div class="nav-group">
+          <div class="nav-group-title">Dasar Data</div>
+          <ul class="nav-list">
+            <li>
+              <a href="fundamentals.html" class="nav-item-link" data-lesson-id="fundamentals">
+                <span class="nav-item-left"><span class="nav-icon">02</span> Data Fundamentals</span>
+                <span class="nav-status-badge" data-lesson-badge="fundamentals">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="exploration.html" class="nav-item-link" data-lesson-id="exploration">
+                <span class="nav-item-left"><span class="nav-icon">03</span> Data Exploration</span>
+                <span class="nav-status-badge" data-lesson-badge="exploration">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="preparation.html" class="nav-item-link" data-lesson-id="preparation">
+                <span class="nav-item-left"><span class="nav-icon">04</span> Data Preparation</span>
+                <span class="nav-status-badge" data-lesson-badge="preparation">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Metode Analisis -->
+        <div class="nav-group">
+          <div class="nav-group-title">Metode Analisis</div>
+          <ul class="nav-list">
+            <li>
+              <a href="method-explorer.html" class="nav-item-link" data-lesson-id="method-explorer">
+                <span class="nav-item-left"><span class="nav-icon">05</span> Method Explorer</span>
+                <span class="nav-status-badge" data-lesson-badge="method-explorer">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="regression.html" class="nav-item-link" data-lesson-id="regression">
+                <span class="nav-item-left"><span class="nav-icon">06</span> Regression Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="regression">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="classification.html" class="nav-item-link active" data-lesson-id="classification">
+                <span class="nav-item-left"><span class="nav-icon">07</span> Classification Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="classification">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="clustering.html" class="nav-item-link" data-lesson-id="clustering">
+                <span class="nav-item-left"><span class="nav-icon">08</span> Clustering Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="clustering">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="association-rules.html" class="nav-item-link" data-lesson-id="association-rules">
+                <span class="nav-item-left"><span class="nav-icon">09</span> Association Rules</span>
+                <span class="nav-status-badge" data-lesson-badge="association-rules">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="ann.html" class="nav-item-link" data-lesson-id="ann">
+                <span class="nav-item-left"><span class="nav-icon">10</span> ANN Visualizer</span>
+                <span class="nav-status-badge" data-lesson-badge="ann">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="text-mining.html" class="nav-item-link" data-lesson-id="text-mining">
+                <span class="nav-item-left"><span class="nav-icon">11</span> Text Mining Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="text-mining">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Praktik & Evaluasi -->
+        <div class="nav-group">
+          <div class="nav-group-title">Praktik & Evaluasi</div>
+          <ul class="nav-list">
+            <li>
+              <a href="project-workspace.html" class="nav-item-link" data-lesson-id="project-workspace">
+                <span class="nav-item-left"><span class="nav-icon">12</span> Project Workspace</span>
+                <span class="nav-status-badge" data-lesson-badge="project-workspace">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="quiz.html" class="nav-item-link" data-lesson-id="quiz">
+                <span class="nav-item-left"><span class="nav-icon">✓</span> Kuis & Review</span>
+                <span class="nav-status-badge" data-lesson-badge="quiz">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" aria-label="Buka Menu">☰</button>
+          <div class="breadcrumbs">
+            <a href="../index.html">Beranda</a>
+            <span class="separator">/</span>
+            <span>Metode Analisis</span>
+            <span class="separator">/</span>
+            <span class="current">Classification Lab</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button id="btn-toggle-complete" class="complete-toggle-btn">
+            <span>○</span> Tandai Selesai
+          </button>
+          <button id="theme-toggle-btn" class="theme-toggle-btn">
+            <span class="icon">☀️</span> Mode Terang
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <div class="page-category-tag">Modul 07 • Prediksi Kategori & Evaluasi</div>
+          <h1 class="page-title">Classification Lab: Prediksi Customer Churn</h1>
+          <p class="page-lead">
+            Berbeda dengan regresi yang menebak angka, klasifikasi memprediksi kategori kelas (misal: "Berhenti Berlangganan" vs "Tetap Langganan"). Pelajari pohon keputusan, cara membaca Confusion Matrix, dan konsekuensi bisnis False Positive vs False Negative.
+          </p>
+        </div>
+
+        <!-- Learning Objective Card -->
+        <div class="learning-objective-card">
+          <div class="objective-icon">🎯</div>
+          <div class="objective-content">
+            <h3>Tujuan Pembelajaran Modul Ini:</h3>
+            <ul class="objective-list">
+              <li>Membedakan klasifikasi kategori (diskrit) dari regresi prediksi angka (kontinu).</li>
+              <li>Memahami alur pemikiran pohon keputusan (Decision Tree) dan prinsip peluang Naive Bayes.</li>
+              <li>Membaca Confusion Matrix 2x2: True Positive (TP), False Positive (FP), False Negative (FN), dan True Negative (TN).</li>
+              <li>Menghitung dan menginterpretasikan metrik: Akurasi, Presisi, Recall, dan F1-Score.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Decision Tree Architecture Card -->
+        <div class="card" style="margin-bottom: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3); flex-wrap: wrap; gap: var(--space-2);">
+            <div>
+              <span class="badge badge-brand">Model Aturan Keputusan</span>
+              <h2 class="card-title" style="margin-top: 4px;">Pohon Keputusan (Decision Tree) Sederhana</h2>
+            </div>
+            <span class="badge badge-teal">Studi Kasus: Layanan Coffee Subscription</span>
+          </div>
+          <p style="font-size: var(--font-size-sm); color: var(--text-muted); line-height: 1.6; margin-bottom: var(--space-4);">
+            Model mengevaluasi data historis 16 pelanggan berdasarkan tiga fitur: Masa Langganan (Bulan), Frekuensi Pesanan, dan Riwayat Komplain.
+          </p>
+
+          <div style="background: var(--bg-surface); padding: var(--space-5); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--font-size-sm);">
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <span class="badge badge-brand">Aturan 1</span>
+              <span>Jika <strong>Pernah Komplain = "Ya"</strong> DAN <strong>Frekuensi Pesan &le; 3x/bulan</strong> &rarr; <span class="badge badge-demo">Prediksi Churn (Berhenti)</span></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <span class="badge badge-brand">Aturan 2</span>
+              <span>Jika <strong>Masa Langganan &le; 3 bulan</strong> DAN <strong>Frekuensi Pesan &le; 2x/bulan</strong> &rarr; <span class="badge badge-demo">Prediksi Churn (Berhenti)</span></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-2);">
+              <span class="badge badge-brand">Aturan 3</span>
+              <span>Jika tidak memenuhi kondisi di atas &rarr; <span class="badge badge-verified">Prediksi Tetap Langganan</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confusion Matrix & Metrics Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-8);">
+          <!-- Confusion Matrix Table -->
+          <div class="card">
+            <span class="badge badge-teal">Evaluasi Kesalahan Model</span>
+            <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: #ffffff; margin-top: 4px;">
+              Live Confusion Matrix (Hasil 16 Pelanggan)
+            </h3>
+            <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin-bottom: var(--space-3);">
+              Membandingkan kelas aktual kasir dengan hasil prediksi model Decision Tree:
+            </p>
+
+            <table class="confusion-matrix-table">
+              <tr>
+                <td></td>
+                <td style="font-size: var(--font-size-xs); font-weight: 700; color: var(--text-subtle);">Pred: CHURN (Ya)</td>
+                <td style="font-size: var(--font-size-xs); font-weight: 700; color: var(--text-subtle);">Pred: TETAP (Tidak)</td>
+              </tr>
+              <tr>
+                <td style="font-size: var(--font-size-xs); font-weight: 700; color: var(--text-subtle); writing-mode: vertical-rl; transform: rotate(180deg);">Aktual: CHURN</td>
+                <td class="cm-cell tp">
+                  <div id="cm-tp-val" class="cm-val">7</div>
+                  <div class="cm-lbl">True Positive (TP)</div>
+                </td>
+                <td class="cm-cell fn">
+                  <div id="cm-fn-val" class="cm-val">0</div>
+                  <div class="cm-lbl">False Negative (FN)</div>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-size: var(--font-size-xs); font-weight: 700; color: var(--text-subtle); writing-mode: vertical-rl; transform: rotate(180deg);">Aktual: TETAP</td>
+                <td class="cm-cell fp">
+                  <div id="cm-fp-val" class="cm-val">0</div>
+                  <div class="cm-lbl">False Positive (FP)</div>
+                </td>
+                <td class="cm-cell tn">
+                  <div id="cm-tn-val" class="cm-val">9</div>
+                  <div class="cm-lbl">True Negative (TN)</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Evaluation Metrics Computed Cards -->
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="badge badge-brand">Metrik Statistik Evaluasi</span>
+              <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: #ffffff; margin-top: 4px; margin-bottom: var(--space-4);">
+                Skor Performa Klasifikasi
+              </h3>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+                <div style="background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: var(--font-size-xs); color: var(--text-subtle); text-transform: uppercase; font-weight: 700;">Akurasi (Accuracy)</div>
+                  <div id="metric-accuracy" style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-success); margin: 2px 0;">100%</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">(TP+TN) / Total</div>
+                </div>
+
+                <div style="background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: var(--font-size-xs); color: var(--text-subtle); text-transform: uppercase; font-weight: 700;">Presisi (Precision)</div>
+                  <div id="metric-precision" style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-accent-teal); margin: 2px 0;">100%</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">TP / (TP+FP)</div>
+                </div>
+
+                <div style="background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: var(--font-size-xs); color: var(--text-subtle); text-transform: uppercase; font-weight: 700;">Recall (Sensitivitas)</div>
+                  <div id="metric-recall" style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 800; color: #a5b4fc; margin: 2px 0;">100%</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">TP / (TP+FN)</div>
+                </div>
+
+                <div style="background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div style="font-size: var(--font-size-xs); color: var(--text-subtle); text-transform: uppercase; font-weight: 700;">F1-Score</div>
+                  <div id="metric-f1" style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 800; color: #f59e0b; margin: 2px 0;">100%</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">Harmonic mean P & R</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: var(--font-size-xs); color: var(--text-subtle); background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); margin-top: var(--space-4);">
+              ℹ️ Metrik dihitung murni dari hasil eksekusi data 16 pelanggan kasir fiktif Kedai Kopi Senja.
+            </div>
+          </div>
+        </div>
+
+        <!-- Customers Prediction Table -->
+        <div class="card" style="margin-bottom: var(--space-8);">
+          <h3 class="card-title">Tabel Hasil Evaluasi 16 Data Pelanggan Langganan</h3>
+          <div class="table-responsive">
+            <table class="dataset-table">
+              <thead>
+                <tr>
+                  <th>ID Pelanggan</th>
+                  <th>Masa Langganan</th>
+                  <th>Frekuensi Pesan</th>
+                  <th>Komplain</th>
+                  <th>Pengeluaran</th>
+                  <th>Aktual Churn</th>
+                  <th>Prediksi Model</th>
+                  <th>Status Evaluasi</th>
+                </tr>
+              </thead>
+              <tbody id="classification-customers-tbody">
+                <!-- Rendered by classification.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Google Colab Companion Code Walkthrough Component -->
+        <div class="colab-companion-card" id="colab-walkthrough">
+          <!-- Banner Header with Link to Actual Colab -->
+          <div class="colab-top-banner">
+            <div class="colab-brand-title">
+              <div class="colab-logo-icon">🐍</div>
+              <div>
+                <div style="display: flex; align-items: center; gap: var(--space-2);">
+                  <span class="badge badge-brand">Google Colab Companion</span>
+                  <span class="badge badge-teal">Praktikum Scikit-Learn</span>
+                </div>
+                <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: #ffffff; margin-top: 2px;">
+                  Alur Kode Python: Pemodelan Prediksi Churn (Decision Tree & Naive Bayes)
+                </h3>
+                <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                  Disesuaikan dari notebook Google Colab praktikum dengan tema studi kasus <strong>Kedai Kopi Senja (Subscription Churn)</strong>.
+                </p>
+              </div>
+            </div>
+            <a href="https://colab.research.google.com/drive/1F8LS7nFU6FdYQGLVK5DENSxSp-grLJgw?usp=sharing" target="_blank" rel="noopener noreferrer" class="colab-launch-btn">
+              <span>Buka di Google Colab</span> ↗
+            </a>
+          </div>
+
+          <!-- Horizontal Step Navigator -->
+          <div class="colab-step-tabs" id="colab-tabs">
+            <button class="colab-step-btn active" data-step="1">
+              <span class="colab-step-num">1</span> Muat & Eksplorasi
+            </button>
+            <button class="colab-step-btn" data-step="2">
+              <span class="colab-step-num">2</span> Imputasi Missing
+            </button>
+            <button class="colab-step-btn" data-step="3">
+              <span class="colab-step-num">3</span> One-Hot Encoding
+            </button>
+            <button class="colab-step-btn" data-step="4">
+              <span class="colab-step-num">4</span> Train-Test Split (70:30)
+            </button>
+            <button class="colab-step-btn" data-step="5">
+              <span class="colab-step-num">5</span> Decision Tree & Plot
+            </button>
+            <button class="colab-step-btn" data-step="6">
+              <span class="colab-step-num">6</span> Naive Bayes
+            </button>
+            <button class="colab-step-btn" data-step="7">
+              <span class="colab-step-num">7</span> Confusion Matrix & Metrik
+            </button>
+            <button class="colab-step-btn" data-step="8">
+              <span class="colab-step-num">8</span> Komparasi ROC & Hasil
+            </button>
+          </div>
+
+          <div class="colab-body">
+            <!-- STEP 1 -->
+            <div class="colab-step-panel active" id="colab-panel-1">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 1 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Import Libraries & Pemeriksaan Struktur Awal Dataset
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Mengimpor Pandas, membaca dataset churn pelanggan kedai kopi, melihat 5 baris pertama, dan memeriksa tipe data tiap kolom.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 0 - 2)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-1">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-1"><code>import pandas as pd
+import numpy as np
+
+# 1. Membaca dataset customer churn (Kedai Kopi Senja)
+df_churn = pd.read_csv('data/customer_churn.csv', sep=';')
+
+# 2. Menampilkan 5 baris pertama untuk inspeksi awal
+print("=== 5 Baris Pertama Data ===")
+print(df_churn.head())
+
+# 3. Memeriksa tipe data, jumlah non-null, dan penggunaan memori
+print("\n=== Informasi Struktur Kolom (info) ===")
+df_churn.info()
+
+# 4. Ringkasan statistik deskriptif untuk kolom numerik
+print("\n=== Statistik Deskriptif ===")
+df_churn.describe().transpose()</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                RangeIndex: 16 entries, 0 to 15<br>
+                Data columns (total 6 columns):<br>
+                # &nbsp; Column &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Non-Null Count &nbsp;Dtype<br>
+                --- &nbsp;------ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-------------- &nbsp;-----<br>
+                0 &nbsp; customer_id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 16 non-null &nbsp; &nbsp; object<br>
+                1 &nbsp; lama_langganan_bulan &nbsp; &nbsp; &nbsp;16 non-null &nbsp; &nbsp; int64<br>
+                2 &nbsp; frekuensi_pesan_per_bulan 16 non-null &nbsp; &nbsp; int64<br>
+                3 &nbsp; komplain_terakhir &nbsp; &nbsp; &nbsp; &nbsp; 16 non-null &nbsp; &nbsp; object<br>
+                4 &nbsp; pengeluaran_ribu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;15 non-null &nbsp; &nbsp; float64 &nbsp;# (1 nilai missing!)<br>
+                5 &nbsp; churn &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 16 non-null &nbsp; &nbsp; object
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Mengapa Langkah Ini Penting dalam Bisnis?</strong><br>
+                Sebelum menerapkan algoritma machine learning, analis harus memvalidasi integritas dataset. Perintah <code>info()</code> langsung membongkar apakah ada kolom numerik yang keliru terbaca sebagai teks (*object*) atau adanya nilai kosong yang dapat menggagalkan *training* model.
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="colab-step-panel" id="colab-panel-2">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 2 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Pendeteksian Missing Values & Imputasi Median
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Menemukan kolom yang memiliki nilai kosong dan mengisinya dengan nilai median agar ukuran sampel tidak berkurang akibat penghapusan baris (*drop*).
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 3 - 4)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-2">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-2"><code># 1. Periksa jumlah missing values di setiap kolom
+print("Jumlah Missing Values Sebelum Imputasi:")
+print(df_churn.isnull().sum())
+
+# 2. Hitung nilai Median untuk kolom numerik (pengeluaran_ribu)
+# Alasan: Median tahan terhadap outlier dibandingkan mean
+median_spending = df_churn['pengeluaran_ribu'].median()
+print(f"\nNilai Median Pengeluaran: Rp {median_spending * 1000:,.0f}")
+
+# 3. Terapkan imputasi fillna dengan median
+df_churn['pengeluaran_ribu'].fillna(median_spending, inplace=True)
+
+# 4. Verifikasi kembali bahwa missing values telah tuntas diatasi
+print("\nJumlah Missing Values Setelah Imputasi Median:")
+print(df_churn.isnull().sum())</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                Jumlah Missing Values Sebelum Imputasi:<br>
+                pengeluaran_ribu &nbsp; &nbsp;1<br>
+                Nilai Median Pengeluaran: Rp 225,000<br>
+                Jumlah Missing Values Setelah Imputasi Median:<br>
+                pengeluaran_ribu &nbsp; &nbsp;0 &nbsp;(Semua kolom kini 100% lengkap!)
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Prinsip Analisis Bisnis:</strong><br>
+                Menghapus baris pelanggan yang memiliki nilai kosong (*drop row*) berisiko menimbulkan *selection bias*. Mengisi dengan nilai tengah (median) mempertahankan volume observasi tanpa merusak distribusi statistik secara ekstrem.
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="colab-step-panel" id="colab-panel-3">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 3 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    One-Hot Encoding untuk Variabel Kategorikal
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Mengonversi kolom teks seperti <code>komplain_terakhir</code> menjadi representasi numerik biner (0 / 1) menggunakan <code>OneHotEncoder</code> dari Scikit-Learn.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 5)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-3">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-3"><code>from sklearn.preprocessing import OneHotEncoder
+
+# 1. Inisialisasi OneHotEncoder (sparse_output=False agar menghasilkan array 2D standar)
+encoder = OneHotEncoder(sparse_output=False)
+
+# 2. Tentukan fitur teks/kategorikal yang perlu di-encode
+categorical_cols = ['komplain_terakhir']
+
+# 3. Transformasi fitur kategorikal ke dalam DataFrame angka biner
+df_encoded_cats = pd.DataFrame(
+    encoder.fit_transform(df_churn[categorical_cols]),
+    columns=encoder.get_feature_names_out(categorical_cols)
+)
+
+# 4. Hapus kolom string asli dan gabungkan fitur biner hasil encoding
+df_churn_clean = df_churn.drop(categorical_cols, axis=1)
+df_final = pd.concat([df_churn_clean, df_encoded_cats], axis=1)
+
+print("Tampilan DataFrame setelah One-Hot Encoding:")
+print(df_final.head(3))</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Kolom Baru Hasil Encoding:</strong><br>
+                ['customer_id', 'lama_langganan_bulan', 'frekuensi_pesan_per_bulan', 'pengeluaran_ribu', 'churn', 'komplain_terakhir_Tidak', 'komplain_terakhir_Ya']
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Mengapa Harus One-Hot Encoding?</strong><br>
+                Algoritma matematika dan pohon keputusan tidak bisa menghitung string teks "Ya" dan "Tidak". Melalui One-Hot Encoding, "Ya" diubah menjadi kolom <code>komplain_terakhir_Ya = 1</code>, memungkinkan kalkulasi matematis tanpa mengasumsikan urutan nilai (*ordinal bias*).
+              </div>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="colab-step-panel" id="colab-panel-4">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 4 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Seleksi Fitur ($X$), Variabel Target ($Y$), & Train-Test Split (70:30)
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Memisahkan variabel input dari target churn, lalu membagi data 70% untuk melatih model dan 30% untuk pengujian independen.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 6 - 9)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-4">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-4"><code>from sklearn.model_selection import train_test_split
+
+# 1. Pilih Fitur (X): Buang ID Pelanggan dan label Churn
+X = df_final.drop(['customer_id', 'churn'], axis=1)
+
+# 2. Tentukan Sasaran Prediksi / Target (y)
+y = df_final['churn']
+
+# 3. Bagi data menjadi Training Data (70%) dan Testing Data (30%)
+# Menggunakan random_state=42 agar pembagian acak selalu konsisten/reproducible
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, shuffle=True, random_state=42
+)
+
+# 4. Tampilkan proporsi pembagian data
+print(f"Bentuk X_train (Data Latih) : {X_train.shape}")
+print(f"Bentuk X_test  (Data Uji)   : {X_test.shape}")
+print(f"Bentuk y_train (Label Latih): {y_train.shape}")
+print(f"Bentuk y_test  (Label Uji)  : {y_test.shape}")</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                Bentuk X_train (Data Latih) : (11, 5)<br>
+                Bentuk X_test &nbsp;(Data Uji) &nbsp; : (5, 5)<br>
+                Bentuk y_train (Label Latih): (11,)<br>
+                Bentuk y_test &nbsp;(Label Uji) &nbsp;: (5,)
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Kaidah Anti-Overfitting:</strong><br>
+                Jangan pernah menguji performa model menggunakan data yang sama dengan data latihnya! Itu ibarat membocorkan kunci jawaban ujian sebelum tes dimulai. Train-Test Split 70:30 memastikan evaluasi model mencerminkan kemampuannya dalam memprediksi pelanggan baru di dunia nyata.
+              </div>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="colab-step-panel" id="colab-panel-5">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 5 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Pemodelan & Visualisasi Decision Tree (Pohon Keputusan)
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Melatih model pohon keputusan Scikit-Learn dengan parameter <code>min_impurity_decrease=0.01</code> dan memvisualisasikan diagram percabangannya.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 10 - 11)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-5">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-5"><code>import matplotlib.pyplot as plt
+from sklearn import tree
+
+# 1. Inisialisasi model Decision Tree
+# min_impurity_decrease=0.01 memangkas cabang jika penurunan impurity tidak signifikan (pruning)
+dtc = tree.DecisionTreeClassifier(min_impurity_decrease=0.01, random_state=42)
+
+# 2. Latih model dengan data training
+dtc.fit(X_train, y_train)
+
+# 3. Visualisasikan diagram pohon keputusan menggunakan Matplotlib
+plt.figure(figsize=(14, 7))
+tree.plot_tree(
+    dtc,
+    max_depth=3,           # Membatasi kedalaman agar mudah dibaca & tidak lag
+    filled=True,           # Warna kotak menandai dominasi kelas
+    rounded=True,
+    class_names=['Tetap', 'Churn'],
+    feature_names=X_train.columns
+)
+plt.title("Arsitektur Pohon Keputusan: Prediksi Churn Pelanggan", fontsize=14, fontweight='bold')
+plt.tight_layout()
+plt.show()
+
+# 4. Lakukan prediksi pada data uji (X_test)
+y_pred_dtc = dtc.predict(X_test)
+print("Hasil Prediksi Decision Tree pada Data Uji:")
+print(y_pred_dtc)</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                Visualisasi pohon berhasil di-render.<br>
+                Hasil Prediksi Decision Tree pada Data Uji: ['Ya' 'Tidak' 'Ya' 'Tidak' 'Tidak']
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Keunggulan Decision Tree untuk Stakeholder Bisnis:</strong><br>
+                Decision Tree adalah algoritma yang paling mudah dijelaskan kepada manajemen non-teknis (*white-box model*). Anda dapat menunjukkan dengan jelas: "Jika frekuensi belanja &le; 2x dan ada komplain, pelanggan 85% berisiko kabur."
+              </div>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="colab-step-panel" id="colab-panel-6">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 6 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Pemodelan Alternatif: Naive Bayes Classifier
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Menerapkan algoritma Gaussian Naive Bayes sebagai model pembanding (*benchmark*) untuk melihat efektivitas pendekatan probabilitas bersyarat.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 14)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-6">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-6"><code>from sklearn.naive_bayes import GaussianNB
+
+# 1. Inisialisasi model Gaussian Naive Bayes
+gnb = GaussianNB()
+
+# 2. Latih model dengan data training yang sama
+gnb.fit(X_train, y_train)
+
+# 3. Prediksi kelas pada data uji (X_test)
+y_pred_gnb = gnb.predict(X_test)
+
+print("Hasil Prediksi Naive Bayes pada Data Uji:")
+print(y_pred_gnb)</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                Hasil Prediksi Naive Bayes pada Data Uji: ['Ya' 'Tidak' 'Ya' 'Tidak' 'Tidak']<br>
+                Model Naive Bayes berhasil memproses probabilitas bersyarat P(Churn | X).
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Kapan Menggunakan Naive Bayes?</strong><br>
+                Naive Bayes sangat cepat, hemat komputasi, dan efektif pada dataset berdimensi tinggi atau data teks (seperti sentimen ulasan). Namun, ia mengasumsikan semua fitur independen satu sama lain (asumsi "naif").
+              </div>
+            </div>
+
+            <!-- STEP 7 -->
+            <div class="colab-step-panel" id="colab-panel-7">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 7 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Evaluasi Confusion Matrix & Metrik Bisnis Lengkap
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Menghitung matriks kesalahan 2x2, Akurasi, Presisi, Recall, F1-Score, dan Cohen's Kappa Score dari kedua model.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 12, 13, 15, 16)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-7">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-7"><code>from sklearn import metrics
+
+# 1. Confusion Matrix untuk Decision Tree
+cm_dtc = metrics.confusion_matrix(y_test, y_pred_dtc)
+print("=== Confusion Matrix (Decision Tree) ===")
+print(cm_dtc)
+
+# 2. Perhitungan Metrik Evaluasi Komprehensif (Decision Tree)
+acc_dtc = metrics.accuracy_score(y_test, y_pred_dtc)
+prec_dtc = metrics.precision_score(y_test, y_pred_dtc, pos_label='Ya')
+rec_dtc = metrics.recall_score(y_test, y_pred_dtc, pos_label='Ya')
+f1_dtc = metrics.f1_score(y_test, y_pred_dtc, pos_label='Ya')
+kappa_dtc = metrics.cohen_kappa_score(y_test, y_pred_dtc)
+
+print(f"\nAkurasi (Accuracy)  : {acc_dtc:.4f}")
+print(f"Presisi (Precision) : {prec_dtc:.4f}")
+print(f"Recall (Sensitivitas): {rec_dtc:.4f}  <-- Krusial untuk mendeteksi pelanggan churn!")
+print(f"F1-Score            : {f1_dtc:.4f}")
+print(f"Cohen's Kappa Score : {kappa_dtc:.4f}")
+
+# 3. Hitung juga metrik untuk Naive Bayes
+acc_gnb = metrics.accuracy_score(y_test, y_pred_gnb)
+prec_gnb = metrics.precision_score(y_test, y_pred_gnb, pos_label='Ya')
+rec_gnb = metrics.recall_score(y_test, y_pred_gnb, pos_label='Ya')
+f1_gnb = metrics.f1_score(y_test, y_pred_gnb, pos_label='Ya')</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                === Confusion Matrix (Decision Tree) ===<br>
+                [[3 &nbsp;0] &nbsp; &nbsp; &nbsp;# [TN, FP]<br>
+                &nbsp;[0 &nbsp;2]] &nbsp; &nbsp; &nbsp;# [FN, TP]<br>
+                Akurasi (Accuracy) &nbsp; : 1.0000 (100%)<br>
+                Presisi (Precision) &nbsp;: 1.0000 (100%)<br>
+                Recall (Sensitivitas): 1.0000 (100%)<br>
+                F1-Score &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: 1.0000<br>
+                Cohen's Kappa Score &nbsp;: 1.0000
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Makna Metrik Bagi Pemilik Bisnis:</strong><br>
+                <strong>Recall</strong> menjawab: "Dari seluruh pelanggan yang sebenarnya mau berhenti, berapa persen yang berhasil diselamatkan sistem?" Sedangkan <strong>Presisi</strong> menjawab: "Dari seluruh pelanggan yang ditebak akan berhenti, berapa persen yang tebakannya tepat?"
+              </div>
+            </div>
+
+            <!-- STEP 8 -->
+            <div class="colab-step-panel" id="colab-panel-8">
+              <div class="colab-meta-header">
+                <div>
+                  <span class="badge badge-brand">Langkah 8 dari 8</span>
+                  <h4 style="font-family: var(--font-family-heading); font-size: var(--font-size-base); color: #ffffff; margin-top: 4px;">
+                    Komparasi Kurva ROC-AUC & Pembuatan Tabel Prediksi Akhir (df_compare)
+                  </h4>
+                  <p style="font-size: var(--font-size-xs); color: var(--text-muted); margin: 0;">
+                    Membandingkan trade-off sensitivitas vs false alarm menggunakan Kurva ROC, menghitung skor AUC, dan mengekspor tabel hasil komparasi prediksi.
+                  </p>
+                </div>
+              </div>
+
+              <div class="colab-code-wrap">
+                <div class="colab-code-bar">
+                  <span>Python (Google Colab Cell 17 - 21)</span>
+                  <button class="colab-copy-btn" data-target="code-colab-8">📋 Salin Kode</button>
+                </div>
+                <pre class="colab-code-pre" id="code-colab-8"><code>import matplotlib.pyplot as plt
+
+# 1. Ambil probabilitas kelas positif ('Ya') untuk membuat kurva ROC
+y_pred_dtc_proba = dtc.predict_proba(X_test)[:, 1]
+y_pred_gnb_proba = gnb.predict_proba(X_test)[:, 1]
+
+# 2. Hitung False Positive Rate (FPR), True Positive Rate (TPR), dan AUC
+fpr_dtc, tpr_dtc, _ = metrics.roc_curve(y_test, y_pred_dtc_proba, pos_label='Ya')
+auc_dtc = metrics.roc_auc_score(y_test, y_pred_dtc_proba)
+
+fpr_gnb, tpr_gnb, _ = metrics.roc_curve(y_test, y_pred_gnb_proba, pos_label='Ya')
+auc_gnb = metrics.roc_auc_score(y_test, y_pred_gnb_proba)
+
+# 3. Visualisasikan Komparasi Kurva ROC
+plt.figure(figsize=(8, 6))
+plt.plot(fpr_dtc, tpr_dtc, label=f"Decision Tree (AUC = {auc_dtc:.3f})", color="#6366f1", lw=2)
+plt.plot(fpr_gnb, tpr_gnb, label=f"Naive Bayes (AUC = {auc_gnb:.3f})", color="#06b6d4", lw=2)
+plt.plot([0, 1], [0, 1], 'k--', lw=1.5, label="Random Guess (AUC = 0.500)")
+plt.title("Perbandingan Kurva ROC: Decision Tree vs Naive Bayes", fontweight='bold')
+plt.xlabel("False Positive Rate (1 - Specificity)")
+plt.ylabel("True Positive Rate (Recall)")
+plt.legend(loc="lower right")
+plt.grid(True, alpha=0.3)
+plt.show()
+
+# 4. Buat DataFrame Hasil Komparasi Prediksi Aktual vs Model
+df_compare = X_test.copy()
+df_compare['Kelas_Aktual'] = y_test
+df_compare['Prediksi_DecisionTree'] = y_pred_dtc
+df_compare['Prediksi_NaiveBayes'] = y_pred_gnb
+
+print("\n=== Tabel Perbandingan Hasil Prediksi Akhir ===")
+print(df_compare.head())</code></pre>
+              </div>
+
+              <div class="colab-output-box">
+                <strong style="color: #94a3b8;">Output Terminal / Notebook:</strong><br>
+                Kurva ROC berhasil digambarkan.<br>
+                Decision Tree AUC = 1.000 | Naive Bayes AUC = 1.000<br>
+                DataFrame <code>df_compare</code> siap diekspor untuk ditindaklanjuti oleh tim marketing!
+              </div>
+
+              <div class="colab-insight-callout">
+                💡 <strong>Insight Tindak Lanjut Bisnis:</strong><br>
+                Hasil kolom <code>Prediksi_DecisionTree</code> dari tabel <code>df_compare</code> dapat langsung dikirim ke tim customer relationship untuk diberikan perlakuan khusus: penawaran voucher gratis, kupon diskon langganan, atau survei kepuasan sebelum mereka benar-benar berhenti berlangganan.
+              </div>
+            </div>
+
+            <!-- Colab Step Footer Navigator -->
+            <div class="colab-footer-nav">
+              <button class="btn btn-secondary" id="btn-colab-prev" disabled>← Langkah Sebelumnya</button>
+              <span id="colab-step-indicator" style="font-size: var(--font-size-xs); color: var(--text-muted); font-weight: 600;">
+                Langkah 1 dari 8
+              </span>
+              <button class="btn btn-primary" id="btn-colab-next">Langkah Berikutnya →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Tradeoff Exercise -->
+        <div class="try-it-panel">
+          <div class="try-it-header">
+            <div>
+              <span class="badge badge-brand">Pertimbangan Finansial & Risiko</span>
+              <h2 class="try-it-title" style="margin-top: 4px;">🎯 Analisis Trade-off: False Positive vs False Negative</h2>
+            </div>
+          </div>
+
+          <div style="font-size: var(--font-size-base); font-weight: 600; color: #ffffff; margin-bottom: var(--space-3);">
+            Dalam kasus pencegahan pelanggan berhenti langganan (churn) di Kedai Kopi Senja, kesalahan manakah yang jauh lebih merugikan bagi profit jangka panjang bisnis?
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-4);">
+            <label style="display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer; background: var(--bg-surface); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <input type="radio" name="tradeoff_q" value="opt_fp_worse">
+              <span><strong>False Positive (FP):</strong> Mengira pelanggan akan churn padahal sebenarnya tetap setia. Cafe rugi karena memberikan diskon retensi cuma-cuma.</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer; background: var(--bg-surface); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <input type="radio" name="tradeoff_q" value="opt_fn_worse">
+              <span><strong>False Negative (FN):</strong> Mengira pelanggan aman padahal sebenarnya akan churn. Bisnis kehilangan pelanggan permanen dan biaya mencari pelanggan baru 5-7x lebih mahal.</span>
+            </label>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button id="btn-submit-tradeoff" class="btn btn-primary">Analisis Dampak Bisnis ✓</button>
+          </div>
+
+          <div id="tradeoff-feedback" class="feedback-box"></div>
+        </div>
+
+        <!-- Summary Panel -->
+        <div class="summary-panel">
+          <h3 class="summary-title">📌 Ringkasan Penting Materi Ini</h3>
+          <ul class="summary-list">
+            <li><strong>Klasifikasi memprediksi kelas:</strong> Output berupa Ya/Tidak, Churn/Tetap, atau kategori diskrit.</li>
+            <li><strong>Confusion matrix membedakan jenis error:</strong> Akurasi tinggi bisa menipu jika dataset tidak seimbang (imbalance class).</li>
+            <li><strong>Pilih metrik sesuai biaya bisnis:</strong> Jika False Negative fatal, utamakan Recall daripada Presisi murni.</li>
+          </ul>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <a id="btn-lesson-prev" class="lesson-nav-btn prev">← Regression Lab</a>
+          <a id="btn-lesson-next" class="lesson-nav-btn next">Lanjutkan ke Clustering Lab →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/data-loader.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/classification.js"></script>
+</body>
+</html>

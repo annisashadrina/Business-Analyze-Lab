@@ -1,0 +1,17 @@
+customer_id,lama_langganan_bulan,frekuensi_pesan_per_bulan,komplain_terakhir,pengeluaran_ribu,churn
+CUST-001,14,8,Tidak,320,Tidak
+CUST-002,2,1,Ya,65,Ya
+CUST-003,18,12,Tidak,480,Tidak
+CUST-004,3,2,Ya,90,Ya
+CUST-005,9,6,Tidak,240,Tidak
+CUST-006,1,1,Ya,45,Ya
+CUST-007,24,15,Tidak,620,Tidak
+CUST-008,4,2,Tidak,110,Ya
+CUST-009,12,7,Tidak,290,Tidak
+CUST-010,5,3,Ya,130,Ya
+CUST-011,16,10,Tidak,410,Tidak
+CUST-012,2,1,Tidak,50,Ya
+CUST-013,8,5,Tidak,210,Tidak
+CUST-014,3,2,Ya,85,Ya
+CUST-015,20,11,Tidak,460,Tidak
+CUST-016,6,4,Tidak,170,Tidak

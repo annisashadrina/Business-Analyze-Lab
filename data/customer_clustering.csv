@@ -1,0 +1,25 @@
+customer_id,frekuensi_kunjungan_bulan,rata_rata_belanja_ribu,profil_faktual
+C-01,18,125,VIP Loyal
+C-02,20,140,VIP Loyal
+C-03,16,110,VIP Loyal
+C-04,19,150,VIP Loyal
+C-05,17,130,VIP Loyal
+C-06,15,115,VIP Loyal
+C-07,14,35,WFC Hemat
+C-08,16,40,WFC Hemat
+C-09,12,30,WFC Hemat
+C-10,18,45,WFC Hemat
+C-11,15,38,WFC Hemat
+C-12,13,32,WFC Hemat
+C-13,2,25,Pengunjung Kasual
+C-14,3,30,Pengunjung Kasual
+C-15,1,20,Pengunjung Kasual
+C-16,4,35,Pengunjung Kasual
+C-17,2,28,Pengunjung Kasual
+C-18,3,22,Pengunjung Kasual
+C-19,3,180,Pembeli Acara
+C-20,2,220,Pembeli Acara
+C-21,4,195,Pembeli Acara
+C-22,2,160,Pembeli Acara
+C-23,3,210,Pembeli Acara
+C-24,4,175,Pembeli Acara

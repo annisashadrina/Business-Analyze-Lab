@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Analysis Learning Lab — Laboratorium Interaktif Analisis Data Bisnis</title>
+  <meta name="description" content="Platform web pembelajaran interaktif analisis data bisnis untuk mahasiswa Bisnis Digital. Pelajari alur analisis dari masalah bisnis hingga insight dan rekomendasi.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page-id="dashboard">
+  <div class="app-shell">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-link">
+          <div class="brand-icon">BA</div>
+          <div class="brand-info">
+            <h1>Learning Lab</h1>
+            <span>Business Analysis</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Local Progress Indicator -->
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Progres Belajar</span>
+          <strong id="sidebar-progress-text">0% Selesai</strong>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="sidebar-progress-fill"></div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Group 0: Dashboard -->
+        <div class="nav-group">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html" class="nav-item-link active" data-lesson-id="dashboard">
+                <span class="nav-item-left"><span class="nav-icon">◎</span> Dashboard & Alur</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 1: Mulai dari Sini -->
+        <div class="nav-group">
+          <div class="nav-group-title">Mulai dari Sini</div>
+          <ul class="nav-list">
+            <li>
+              <a href="pages/intro.html" class="nav-item-link" data-lesson-id="intro">
+                <span class="nav-item-left"><span class="nav-icon">01</span> Pengantar BA & Kasus</span>
+                <span class="nav-status-badge" data-lesson-badge="intro">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 2: Dasar Data -->
+        <div class="nav-group">
+          <div class="nav-group-title">Dasar Data</div>
+          <ul class="nav-list">
+            <li>
+              <a href="pages/fundamentals.html" class="nav-item-link" data-lesson-id="fundamentals">
+                <span class="nav-item-left"><span class="nav-icon">02</span> Data Fundamentals</span>
+                <span class="nav-status-badge" data-lesson-badge="fundamentals">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/exploration.html" class="nav-item-link" data-lesson-id="exploration">
+                <span class="nav-item-left"><span class="nav-icon">03</span> Data Exploration</span>
+                <span class="nav-status-badge" data-lesson-badge="exploration">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/preparation.html" class="nav-item-link" data-lesson-id="preparation">
+                <span class="nav-item-left"><span class="nav-icon">04</span> Data Preparation</span>
+                <span class="nav-status-badge" data-lesson-badge="preparation">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 3: Metode Analisis -->
+        <div class="nav-group">
+          <div class="nav-group-title">Metode Analisis</div>
+          <ul class="nav-list">
+            <li>
+              <a href="pages/method-explorer.html" class="nav-item-link" data-lesson-id="method-explorer">
+                <span class="nav-item-left"><span class="nav-icon">05</span> Method Explorer</span>
+                <span class="nav-status-badge" data-lesson-badge="method-explorer">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/regression.html" class="nav-item-link" data-lesson-id="regression">
+                <span class="nav-item-left"><span class="nav-icon">06</span> Regression Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="regression">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/classification.html" class="nav-item-link" data-lesson-id="classification">
+                <span class="nav-item-left"><span class="nav-icon">07</span> Classification Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="classification">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/clustering.html" class="nav-item-link" data-lesson-id="clustering">
+                <span class="nav-item-left"><span class="nav-icon">08</span> Clustering Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="clustering">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/association-rules.html" class="nav-item-link" data-lesson-id="association-rules">
+                <span class="nav-item-left"><span class="nav-icon">09</span> Association Rules</span>
+                <span class="nav-status-badge" data-lesson-badge="association-rules">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/ann.html" class="nav-item-link" data-lesson-id="ann">
+                <span class="nav-item-left"><span class="nav-icon">10</span> ANN Visualizer</span>
+                <span class="nav-status-badge" data-lesson-badge="ann">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/text-mining.html" class="nav-item-link" data-lesson-id="text-mining">
+                <span class="nav-item-left"><span class="nav-icon">11</span> Text Mining Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="text-mining">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 4: Praktik & Review -->
+        <div class="nav-group">
+          <div class="nav-group-title">Praktik & Evaluasi</div>
+          <ul class="nav-list">
+            <li>
+              <a href="pages/project-workspace.html" class="nav-item-link" data-lesson-id="project-workspace">
+                <span class="nav-item-left"><span class="nav-icon">12</span> Project Workspace</span>
+                <span class="nav-status-badge" data-lesson-badge="project-workspace">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="pages/quiz.html" class="nav-item-link" data-lesson-id="quiz">
+                <span class="nav-item-left"><span class="nav-icon">✓</span> Kuis & Review</span>
+                <span class="nav-status-badge" data-lesson-badge="quiz">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- App Header Bar -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" aria-label="Buka Menu">☰</button>
+          <div class="breadcrumbs">
+            <span>Beranda</span>
+            <span class="separator">/</span>
+            <span class="current">Dashboard Utama</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button id="theme-toggle-btn" class="theme-toggle-btn">
+            <span class="icon">☾</span> Tampilan Gelap
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <!-- Hero Section - Amplemarket Aesthetic -->
+        <section class="dashboard-hero">
+          <div class="hero-content">
+            <!-- Amplemarket Split Eyebrow Badge -->
+            <div class="hero-tagline">
+              <span class="hero-tagline-badge">NEW</span>
+              <span class="hero-tagline-text">Laboratorium Interaktif Analisis Data Bisnis & Kasus Nyata →</span>
+            </div>
+
+            <h1 class="hero-title">Business Analysis Learning Lab</h1>
+            <p class="hero-desc">
+              Kuasai analisis data bisnis dari perumusan masalah, eksplorasi data, pemodelan statistik terapan, hingga pengambilan keputusan strategis yang terukur.
+            </p>
+
+            <div class="hero-actions">
+              <a href="pages/intro.html" class="btn btn-primary">
+                Mulai Belajar Sekarang →
+              </a>
+              <a href="pages/project-workspace.html" class="btn btn-secondary">
+                Buka Project Workspace
+              </a>
+            </div>
+
+            <!-- Trust / Metric Baseline Row -->
+            <div class="hero-proof-row">
+              <span class="hero-proof-stars">★★★★★</span>
+              <span>12 Modul Praktik Terpadu</span>
+              <span>·</span>
+              <span>Studi Kasus Nyata Kedai Kopi Senja</span>
+              <span>·</span>
+              <span>100% Offline-Ready</span>
+            </div>
+          </div>
+
+          <!-- Counterweight Line Illustration (Amplemarket Signature Style) -->
+          <div class="hero-illustration" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Geometric Analytics Line Art -->
+              <circle cx="100" cy="100" r="70" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+              <path d="M40 140 L75 105 L110 125 L160 60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="40" cy="140" r="4" fill="currentColor"/>
+              <circle cx="75" cy="105" r="4" fill="currentColor"/>
+              <circle cx="110" cy="125" r="4" fill="currentColor"/>
+              <circle cx="160" cy="60" r="5" fill="currentColor"/>
+              <!-- Telescope / Arrow accent -->
+              <path d="M150 45 L175 55 L165 80" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M130 90 L160 60" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Coordinate Grid -->
+              <path d="M30 160 L170 160" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M30 30 L30 160" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Scatter dots -->
+              <circle cx="60" cy="70" r="2.5" fill="currentColor" opacity="0.6"/>
+              <circle cx="95" cy="50" r="2.5" fill="currentColor" opacity="0.6"/>
+              <circle cx="135" cy="110" r="2.5" fill="currentColor" opacity="0.6"/>
+              <circle cx="145" cy="135" r="2.5" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Business Analysis Lifecycle Diagram -->
+        <section class="lifecycle-container">
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2);">
+            <div>
+              <span class="badge badge-brand">Kerangka Kerja Fundamental</span>
+              <h2 style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 700; letter-spacing: var(--tracking-heading); color: var(--text-main); margin-top: 6px;">
+                Alur Analisis Bisnis (The Analytics Pipeline)
+              </h2>
+            </div>
+            <span style="font-size: var(--font-size-xs); color: var(--text-muted);">Klik setiap tahap untuk langsung membuka modul terkait</span>
+          </div>
+
+          <div class="lifecycle-flow">
+            <a href="pages/intro.html" class="lifecycle-step">
+              <div class="lifecycle-icon">⚠️</div>
+              <div class="lifecycle-name">Masalah Bisnis</div>
+              <div class="lifecycle-num">Tahap 01</div>
+            </a>
+            <a href="pages/intro.html" class="lifecycle-step">
+              <div class="lifecycle-icon">❓</div>
+              <div class="lifecycle-name">Pertanyaan Data</div>
+              <div class="lifecycle-num">Tahap 02</div>
+            </a>
+            <a href="pages/fundamentals.html" class="lifecycle-step">
+              <div class="lifecycle-icon">🗄️</div>
+              <div class="lifecycle-name">Dataset & Variabel</div>
+              <div class="lifecycle-num">Tahap 03</div>
+            </a>
+            <a href="pages/exploration.html" class="lifecycle-step">
+              <div class="lifecycle-icon">🔍</div>
+              <div class="lifecycle-name">Eksplorasi Data</div>
+              <div class="lifecycle-num">Tahap 04</div>
+            </a>
+            <a href="pages/preparation.html" class="lifecycle-step">
+              <div class="lifecycle-icon">🧹</div>
+              <div class="lifecycle-name">Persiapan Data</div>
+              <div class="lifecycle-num">Tahap 05</div>
+            </a>
+            <a href="pages/method-explorer.html" class="lifecycle-step">
+              <div class="lifecycle-icon">🧭</div>
+              <div class="lifecycle-name">Pemilihan Metode</div>
+              <div class="lifecycle-num">Tahap 06</div>
+            </a>
+            <a href="pages/regression.html" class="lifecycle-step">
+              <div class="lifecycle-icon">📈</div>
+              <div class="lifecycle-name">Hasil Pemodelan</div>
+              <div class="lifecycle-num">Tahap 07</div>
+            </a>
+            <a href="pages/project-workspace.html" class="lifecycle-step">
+              <div class="lifecycle-icon">💡</div>
+              <div class="lifecycle-name">Insight Teruji</div>
+              <div class="lifecycle-num">Tahap 08</div>
+            </a>
+            <a href="pages/project-workspace.html" class="lifecycle-step">
+              <div class="lifecycle-icon">🎯</div>
+              <div class="lifecycle-name">Rekomendasi</div>
+              <div class="lifecycle-num">Tahap 09</div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Featured Case Study Card - Amplemarket Obsidian Warm Band -->
+        <section class="business-case-card">
+          <div class="case-badge">Studi Kasus Terpadu Sepanjang Materi</div>
+          <h2 class="case-title">Kedai Kopi Senja — Menyelamatkan Penjualan Sore Hari</h2>
+          <p class="case-description">
+            Kedai Kopi Senja adalah bisnis F&B lokal yang mengalami penurunan transaksi 30% pada jam 14:00 - 17:00 hari kerja. Seluruh modul di laboratorium ini menggunakan dataset penjualan kasir, transaksi menu, dan ulasan pelanggan Kedai Kopi Senja agar Anda dapat mempraktikkan alur analisis secara utuh dari awal sampai lahirnya keputusan bisnis nyata.
+          </p>
+        </section>
+
+        <!-- Learning Modules Grid -->
+        <section>
+          <div style="margin-bottom: var(--space-6);">
+            <h2 style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 700; letter-spacing: var(--tracking-heading); color: var(--text-main);">
+              Daftar Modul & Praktik Laboratorium
+            </h2>
+            <p style="color: var(--text-muted); font-size: var(--font-size-sm); margin-top: 4px;">
+              Pilih topik di bawah ini untuk memulai sesi pembelajaran interaktif:
+            </p>
+          </div>
+
+          <div class="tracks-grid">
+            <!-- 1. Intro - Chromatic Pastel Lilac Card -->
+            <a href="pages/intro.html" class="module-card card-pastel-lilac">
+              <div class="module-card-header">
+                <div class="module-icon-wrap" style="background: rgba(17, 17, 17, 0.08);">💡</div>
+                <span class="badge" style="background: rgba(17,17,17,0.1); color: #111111; border-color: rgba(17,17,17,0.15);">Konsep Dasar</span>
+              </div>
+              <h3 class="module-title">Pengantar Business Analysis</h3>
+              <p class="module-desc">Pahami perbedaan esensial antara masalah bisnis, pertanyaan data, temuan, insight, dan rekomendasi melalui kartu 5-langkah.</p>
+              <div class="module-meta">
+                <span>5 Aktivitas Interaktif</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 2. Fundamentals -->
+            <a href="pages/fundamentals.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">📋</div>
+                <span class="badge badge-brand">Dataset</span>
+              </div>
+              <h3 class="module-title">Data Fundamentals</h3>
+              <p class="module-desc">Kenali struktur baris, kolom, tipe data statistik, serta tentukan Fitur Input (X) vs Variabel Target (Y) secara presisi.</p>
+              <div class="module-meta">
+                <span>Tabel Inspector & Latihan</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 3. Exploration -->
+            <a href="pages/exploration.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">🔍</div>
+                <span class="badge badge-brand">Visualisasi</span>
+              </div>
+              <h3 class="module-title">Data Exploration (EDA)</h3>
+              <p class="module-desc">Hitung ringkasan statistik deskriptif dan eksplorasi grafik dinamis (Bar, Line, Scatter) serta padanan perintah Python pandas.</p>
+              <div class="module-meta">
+                <span>Chart.js & Python Guide</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 4. Preparation -->
+            <a href="pages/preparation.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">🧹</div>
+                <span class="badge badge-demo">Pembersihan</span>
+              </div>
+              <h3 class="module-title">Data Preparation</h3>
+              <p class="module-desc">Tangani data kotor yang disengaja: nilai kosong, baris duplikat, inkonsistensi teks casing, dan anomali outlier secara side-by-side.</p>
+              <div class="module-meta">
+                <span>Transformasi Interaktif</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 5. Method Explorer - Chromatic Pastel Pink Card -->
+            <a href="pages/method-explorer.html" class="module-card card-pastel-pink">
+              <div class="module-card-header">
+                <div class="module-icon-wrap" style="background: rgba(17, 17, 17, 0.08);">🧭</div>
+                <span class="badge" style="background: rgba(17,17,17,0.1); color: #111111; border-color: rgba(17,17,17,0.15);">Decision Tree</span>
+              </div>
+              <h3 class="module-title">Method Explorer</h3>
+              <p class="module-desc">Gunakan wizard pohon keputusan bercabang untuk memilih metode analisis data yang tepat sesuai tujuan dan bentuk variabel bisnis.</p>
+              <div class="module-meta">
+                <span>Panduan Pemilihan Metode</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 6. Regression -->
+            <a href="pages/regression.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">📈</div>
+                <span class="badge badge-brand">Supervised</span>
+              </div>
+              <h3 class="module-title">Regression Lab</h3>
+              <p class="module-desc">Estimasi penjualan dari biaya promosi dengan OLS Linear Regression, simulasi slider interaktif, serta evaluasi metrik MAE, MSE, dan R².</p>
+              <div class="module-meta">
+                <span>Perhitungan Nyata & Batasan</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 7. Classification -->
+            <a href="pages/classification.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">🎯</div>
+                <span class="badge badge-brand">Supervised</span>
+              </div>
+              <h3 class="module-title">Classification Lab</h3>
+              <p class="module-desc">Prediksi customer churn langganan kopi menggunakan Decision Tree, hitung live Confusion Matrix, serta evaluasi Precision vs Recall.</p>
+              <div class="module-meta">
+                <span>Matriks & Tradeoff Biaya</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 8. Clustering - Chromatic Pastel Yellow Card -->
+            <a href="pages/clustering.html" class="module-card card-pastel-yellow">
+              <div class="module-card-header">
+                <div class="module-icon-wrap" style="background: rgba(17, 17, 17, 0.08);">👥</div>
+                <span class="badge" style="background: rgba(17,17,17,0.1); color: #111111; border-color: rgba(17,17,17,0.15);">Unsupervised</span>
+              </div>
+              <h3 class="module-title">Clustering Lab</h3>
+              <p class="module-desc">Segmentasikan pelanggan berdasarkan frekuensi dan belanja dengan K-Means interaktif (K=2, 3, 4) dan susun persona profil bisnis.</p>
+              <div class="module-meta">
+                <span>K-Means 2D & Persona</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 9. Association Rules -->
+            <a href="pages/association-rules.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">🛒</div>
+                <span class="badge badge-brand">Market Basket</span>
+              </div>
+              <h3 class="module-title">Association Rules Lab</h3>
+              <p class="module-desc">Temukan kombinasi menu kasir yang paling sering dibeli bersamaan dengan algoritma Apriori, hitung Support, Confidence, dan Lift Ratio.</p>
+              <div class="module-meta">
+                <span>Strategi Bundling Ritel</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 10. ANN -->
+            <a href="pages/ann.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">⚡</div>
+                <span class="badge badge-brand">Deep Learning</span>
+              </div>
+              <h3 class="module-title">ANN Visualizer</h3>
+              <p class="module-desc">Visualisasikan struktur jaringan saraf tiruan (Input, Hidden, Output), inspeksi bobot dan bias neuron, serta jalankan animasi Forward Pass.</p>
+              <div class="module-meta">
+                <span>Canvas Interaktif & Konsep</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 11. Text Mining -->
+            <a href="pages/text-mining.html" class="module-card">
+              <div class="module-card-header">
+                <div class="module-icon-wrap">💬</div>
+                <span class="badge badge-brand">NLP / Sentimen</span>
+              </div>
+              <h3 class="module-title">Text Mining Lab</h3>
+              <p class="module-desc">Analisis ulasan Google Maps pelanggan melalui pipeline case-folding, cleaning, stopword removal, serta pahami batasan kamus VADER.</p>
+              <div class="module-meta">
+                <span>Tahapan NLP & Distribusi</span>
+                <span class="module-action-link">Buka Materi →</span>
+              </div>
+            </a>
+
+            <!-- 12. Project Workspace - Chromatic Pastel Green Card -->
+            <a href="pages/project-workspace.html" class="module-card card-pastel-green">
+              <div class="module-card-header">
+                <div class="module-icon-wrap" style="background: rgba(17, 17, 17, 0.08);">💼</div>
+                <span class="badge" style="background: rgba(17,17,17,0.1); color: #111111; border-color: rgba(17,17,17,0.15);">Output Akhir</span>
+              </div>
+              <h3 class="module-title">Project Workspace</h3>
+              <p class="module-desc">Kanvas 11-langkah menyusun rencana analisis lengkap: masalah, data, metode, insight, rekomendasi, simpan lokal, dan cetak PDF.</p>
+              <div class="module-meta">
+                <span>Auto-save & Template Kasus</span>
+                <span class="module-action-link">Buka Kanvas →</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Quiz CTA Banner - Amplemarket Dark Section CTA Block -->
+        <section class="card" style="background: var(--color-obsidian-warm); color: #ffffff; border-color: rgba(255, 255, 255, 0.1); margin-bottom: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-4);">
+            <div>
+              <span class="badge" style="background: rgba(255, 255, 255, 0.12); color: #ffffff; border-color: rgba(255, 255, 255, 0.2);">Evaluasi Pemahaman</span>
+              <h2 style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: 700; letter-spacing: var(--tracking-heading); color: #ffffff; margin-top: 8px;">
+                Siap Menguji Penguasaan Konsep Anda?
+              </h2>
+              <p style="color: #a3a19d; font-size: var(--font-size-sm); margin-top: 4px; max-width: 600px;">
+                Ikuti Kuis Komprehensif 15 pertanyaan dengan umpan balik langsung dan analisis rekomendasi topik yang perlu diperkuat.
+              </p>
+            </div>
+            <a href="pages/quiz.html" class="btn" style="background: #ffffff; color: #111111; padding: 12px 24px; font-weight: 600;">
+              Mulai Kuis Sekarang →
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/data-loader.js"></script>
+  <script src="assets/js/progress.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

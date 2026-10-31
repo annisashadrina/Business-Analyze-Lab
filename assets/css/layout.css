@@ -1,0 +1,494 @@
+/* ==========================================================================
+   Business Analysis Learning Lab - App Layout & Navigation Styles
+   Amplemarket Refined Minimalist Architecture
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--text-main);
+  background-color: var(--bg-app);
+  background-image: var(--gradient-hero-corner);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  line-height: 1.55;
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base App Shell Layout */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar Styles - Amplemarket Clean Vertical Rail */
+.app-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 50;
+  transition: transform var(--transition-normal);
+}
+
+.sidebar-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  background: var(--color-ink-black);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .brand-icon {
+  background: #ffffff;
+  color: #111111;
+}
+
+.brand-info h1 {
+  font-family: var(--font-family-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+}
+
+.brand-info span {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 1px;
+}
+
+/* Sidebar Progress Summary */
+.sidebar-progress {
+  padding: var(--space-3) var(--space-6);
+  background: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--space-2);
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+}
+
+.progress-header strong {
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.progress-bar-bg {
+  height: 4px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-ink-black);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+[data-theme="dark"] .progress-bar-fill {
+  background: #ffffff;
+}
+
+/* Sidebar Navigation Sections */
+.sidebar-nav {
+  padding: var(--space-4) var(--space-3);
+  flex-grow: 1;
+}
+
+.nav-group {
+  margin-bottom: var(--space-4);
+}
+
+.nav-group-title {
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--text-subtle);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-item-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.nav-item-link:hover {
+  background: var(--bg-surface-hover);
+  color: var(--text-main);
+}
+
+.nav-item-link.active {
+  background: var(--bg-surface-elevated);
+  color: var(--text-main);
+  border-color: var(--border-hairline);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.nav-item-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-icon {
+  font-size: 0.95rem;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.nav-status-badge {
+  font-size: 0.65rem;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  background: var(--border-subtle);
+  color: var(--text-subtle);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.nav-status-badge.completed {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success-border);
+}
+
+/* Main Area Layout */
+.app-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+/* Header & Breadcrumb - Amplemarket Floating Top Bar */
+.app-header {
+  height: 60px;
+  padding: 0 var(--space-8);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--text-subtle);
+  letter-spacing: -0.01em;
+}
+
+.breadcrumbs a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--text-main);
+}
+
+.breadcrumbs .separator {
+  color: var(--border-hairline);
+  font-weight: 300;
+}
+
+.breadcrumbs .current {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Clean Mode Toggle Button */
+.theme-toggle-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-main);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--color-ink-black);
+}
+
+/* Content Container - Amplemarket 1200px Grid */
+.content-wrapper {
+  flex-grow: 1;
+  padding: var(--space-10) var(--space-8);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Lesson Navigation Footer */
+.lesson-nav-footer {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.lesson-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 18px;
+  border-radius: var(--radius-buttons);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.lesson-nav-btn.prev {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-hairline);
+}
+
+.lesson-nav-btn.prev:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--color-ink-black);
+}
+
+.lesson-nav-btn.next {
+  background: var(--color-ink-black);
+  color: #ffffff;
+  border: 1px solid var(--color-ink-black);
+}
+
+[data-theme="dark"] .lesson-nav-btn.next {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+}
+
+.lesson-nav-btn.next:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.lesson-nav-btn.disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Mark as Complete Button */
+.complete-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success-border);
+  padding: 6px 14px;
+  border-radius: var(--radius-buttons);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.complete-toggle-btn:hover {
+  background: #dcfce7;
+}
+
+.complete-toggle-btn.is-completed {
+  background: var(--color-success);
+  color: #ffffff;
+  border-color: var(--color-success);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .app-sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 45;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+  }
+
+  .content-wrapper {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .lesson-nav-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lesson-nav-btn {
+    justify-content: center;
+  }
+}
+
+/* Print Optimization */
+@media print {
+  .app-sidebar,
+  .app-header,
+  .lesson-nav-footer,
+  .btn-no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .content-wrapper {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}

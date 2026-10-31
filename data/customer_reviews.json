@@ -1,0 +1,74 @@
+[
+  {
+    "review_id": "REV-001",
+    "customer": "Andi Pratama",
+    "language": "id",
+    "rating": 5,
+    "review_text": "Kopi susu gula arennya sangat nikmat, tempatnya nyaman banget buat nugas dan WiFi super kencang!",
+    "sentiment_label": "Positif",
+    "keywords": ["nikmat", "nyaman", "kencang", "kopi"]
+  },
+  {
+    "review_id": "REV-002",
+    "customer": "Siti Nurhaliza",
+    "language": "id",
+    "rating": 2,
+    "review_text": "Pelayanan kasir sangat lambat saat jam sibuk sore. Antrean panjang dan pesanan croissant dingin.",
+    "sentiment_label": "Negatif",
+    "keywords": ["lambat", "panjang", "dingin", "kecewa"]
+  },
+  {
+    "review_id": "REV-003",
+    "customer": "Budi Santoso",
+    "language": "id",
+    "rating": 4,
+    "review_text": "Rasa kopi enak dan pastry renyah, tapi tempat parkir motor agak sempit di akhir pekan.",
+    "sentiment_label": "Positif",
+    "keywords": ["enak", "renyah", "sempit"]
+  },
+  {
+    "review_id": "REV-004",
+    "customer": "Jessica Tan",
+    "language": "en",
+    "rating": 5,
+    "review_text": "Amazing ambiance, aromatic single-origin beans, and exceptionally friendly baristas! Highly recommended.",
+    "sentiment_label": "Positif",
+    "keywords": ["amazing", "aromatic", "friendly", "recommended"]
+  },
+  {
+    "review_id": "REV-005",
+    "customer": "Michael Wong",
+    "language": "en",
+    "rating": 1,
+    "review_text": "Terrible service today. Waited over 30 minutes for a cold brew that never arrived. Horrible experience.",
+    "sentiment_label": "Negatif",
+    "keywords": ["terrible", "waited", "horrible", "never"]
+  },
+  {
+    "review_id": "REV-006",
+    "customer": "Rian Kusuma",
+    "language": "id",
+    "rating": 3,
+    "review_text": "Kopi standar seperti cafe pada umumnya, harga lumayan terjangkau dan tempat duduk cukup banyak.",
+    "sentiment_label": "Netral",
+    "keywords": ["standar", "terjangkau", "cukup"]
+  },
+  {
+    "review_id": "REV-007",
+    "customer": "Sarah Jenkins",
+    "language": "en",
+    "rating": 4,
+    "review_text": "Great workspace for remote workers. Good lighting and comfortable seats, although music can be loud.",
+    "sentiment_label": "Positif",
+    "keywords": ["great", "comfortable", "loud"]
+  },
+  {
+    "review_id": "REV-008",
+    "customer": "Dewi Lestari",
+    "language": "id",
+    "rating": 1,
+    "review_text": "Sangat kecewa dengan kebersihan toilet dan meja yang kotor tidak langsung dibersihkan staf.",
+    "sentiment_label": "Negatif",
+    "keywords": ["kecewa", "kotor", "kebersihan"]
+  }
+]

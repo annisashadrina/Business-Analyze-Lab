@@ -1,0 +1,25 @@
+{
+  "name": "business-analysis-learning-lab",
+  "version": "1.0.0",
+  "description": "Laboratorium Pembelajaran Interaktif Analisis Data Bisnis untuk Mahasiswa Bisnis Digital",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "business-analysis",
+    "data-analytics",
+    "learning-lab",
+    "k-means",
+    "linear-regression",
+    "decision-tree",
+    "apriori",
+    "text-mining"
+  ],
+  "author": "Business Analysis Learning Lab Team",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.5.1"
+  }
+}

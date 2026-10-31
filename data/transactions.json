@@ -1,0 +1,22 @@
+[
+  {"transaction_id": "TRX-001", "items": ["Kopi Susu Senja", "Croissant Mentega"]},
+  {"transaction_id": "TRX-002", "items": ["Kopi Susu Senja", "Roti Bakar Cokelat", "Air Mineral"]},
+  {"transaction_id": "TRX-003", "items": ["Americano Dingin", "Croissant Mentega"]},
+  {"transaction_id": "TRX-004", "items": ["Kopi Susu Senja", "Croissant Mentega", "Donat Gula"]},
+  {"transaction_id": "TRX-005", "items": ["Espresso Single", "Air Mineral"]},
+  {"transaction_id": "TRX-006", "items": ["Kopi Susu Senja", "Croissant Mentega"]},
+  {"transaction_id": "TRX-007", "items": ["Americano Dingin", "Roti Bakar Cokelat"]},
+  {"transaction_id": "TRX-008", "items": ["Kopi Susu Senja", "Donat Gula"]},
+  {"transaction_id": "TRX-009", "items": ["Kopi Susu Senja", "Croissant Mentega", "Roti Bakar Cokelat"]},
+  {"transaction_id": "TRX-010", "items": ["Espresso Single", "Croissant Mentega"]},
+  {"transaction_id": "TRX-011", "items": ["Kopi Susu Senja", "Croissant Mentega"]},
+  {"transaction_id": "TRX-012", "items": ["Americano Dingin", "Air Mineral"]},
+  {"transaction_id": "TRX-013", "items": ["Kopi Susu Senja", "Roti Bakar Cokelat"]},
+  {"transaction_id": "TRX-014", "items": ["Kopi Susu Senja", "Croissant Mentega", "Air Mineral"]},
+  {"transaction_id": "TRX-015", "items": ["Donat Gula", "Air Mineral"]},
+  {"transaction_id": "TRX-016", "items": ["Kopi Susu Senja", "Croissant Mentega"]},
+  {"transaction_id": "TRX-017", "items": ["Americano Dingin", "Croissant Mentega"]},
+  {"transaction_id": "TRX-018", "items": ["Kopi Susu Senja", "Donat Gula"]},
+  {"transaction_id": "TRX-019", "items": ["Roti Bakar Cokelat", "Kopi Susu Senja"]},
+  {"transaction_id": "TRX-020", "items": ["Kopi Susu Senja", "Croissant Mentega", "Donat Gula"]}
+]

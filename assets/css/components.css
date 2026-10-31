@@ -1,0 +1,999 @@
+/* ==========================================================================
+   Business Analysis Learning Lab - Reusable UI Components
+   Amplemarket Component Language: Border-driven, tight grotesk, restrained elevation
+   ========================================================================== */
+
+/* Page Header Component */
+.page-header {
+  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.page-category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--text-muted);
+}
+
+.page-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+.page-lead {
+  font-size: var(--font-size-base);
+  color: var(--text-muted);
+  max-width: 820px;
+  line-height: 1.6;
+  letter-spacing: var(--tracking-body);
+}
+
+/* ==========================================================================
+   Badges & Split Pill Chips (Signature Amplemarket Component)
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px 9px;
+  border-radius: var(--radius-pills);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  background: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border-hairline);
+}
+
+.badge-brand {
+  background: var(--color-cream-paper);
+  color: var(--color-ink-black);
+  border-color: var(--border-hairline);
+}
+
+[data-theme="dark"] .badge-brand {
+  background: var(--color-obsidian-warm);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.badge-teal {
+  background: var(--color-cream-paper);
+  color: var(--color-deep-violet);
+  border-color: rgba(16, 5, 77, 0.15);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .badge-teal {
+  background: var(--color-violet-shade);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.badge-demo {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+  border-color: var(--color-warning-border);
+}
+
+.badge-verified {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: var(--color-success-border);
+}
+
+/* Amplemarket Split Eyebrow Pill Badge */
+.badge-split {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--color-ink-black);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .badge-split {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.badge-split-lead {
+  background: var(--color-ink-black);
+  color: #ffffff;
+  padding: 3px 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .badge-split-lead {
+  background: #ffffff;
+  color: #111111;
+}
+
+.badge-split-label {
+  padding: 3px 10px;
+  color: var(--text-main);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   Cards & Surface Containers
+   ========================================================================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-cards);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: rgba(17, 17, 17, 0.18);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.card-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: var(--text-main);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Chromatic Pastel Variant Cards (Amplemarket Signature) */
+.card-pastel-pink {
+  background: var(--surface-blush-pink) !important;
+  color: #111111 !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+.card-pastel-pink * {
+  color: #111111 !important;
+}
+
+.card-pastel-green {
+  background: var(--surface-mint-green) !important;
+  color: #111111 !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+.card-pastel-green * {
+  color: #111111 !important;
+}
+
+.card-pastel-yellow {
+  background: var(--surface-pale-yellow) !important;
+  color: #111111 !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+.card-pastel-yellow * {
+  color: #111111 !important;
+}
+
+.card-pastel-lilac {
+  background: var(--surface-lilac-wash) !important;
+  color: #111111 !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+.card-pastel-lilac * {
+  color: #111111 !important;
+}
+
+/* Learning Objective Banner */
+.learning-objective-card {
+  background: var(--color-cream-paper);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-cards);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+[data-theme="dark"] .learning-objective-card {
+  background: var(--color-obsidian-warm);
+}
+
+.objective-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .objective-icon {
+  background: #ffffff;
+  color: #111111;
+}
+
+.objective-content h3 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: var(--text-main);
+  margin-bottom: var(--space-2);
+}
+
+.objective-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.objective-list li {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.objective-list li::before {
+  content: "→";
+  color: var(--color-ink-black);
+  font-weight: 800;
+}
+
+[data-theme="dark"] .objective-list li::before {
+  color: #ffffff;
+}
+
+/* Business Case Banner (Amplemarket Obsidian Dark Section Style) */
+.business-case-card {
+  background: var(--color-obsidian-warm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-cards);
+  padding: var(--space-6) var(--space-8);
+  margin-bottom: var(--space-8);
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.business-case-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-ember-orange);
+}
+
+.case-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-cream-paper);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3px 10px;
+  border-radius: var(--radius-pills);
+  margin-bottom: var(--space-3);
+}
+
+.case-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: #ffffff !important;
+  margin-bottom: var(--space-2);
+}
+
+.case-description {
+  font-size: var(--font-size-sm);
+  color: #a3a19d;
+  line-height: 1.6;
+}
+
+/* Metrics & Stats Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.metric-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-cards);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  letter-spacing: var(--tracking-eyebrow);
+}
+
+.metric-value {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: var(--tracking-heading);
+}
+
+.metric-sub {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Try-It Interactive Panels */
+.try-it-panel {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-cards);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.try-it-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.try-it-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ==========================================================================
+   Buttons (Amplemarket Hierarchy: Filled Primary Black + Outlined Secondary)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 10px 18px;
+  border-radius: var(--radius-buttons);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-ink-black);
+  color: #ffffff;
+  border-color: var(--color-ink-black);
+}
+
+[data-theme="dark"] .btn-primary {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--border-hairline);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--color-ink-black);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  border-color: #ffffff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border-color: var(--border-hairline);
+}
+
+.btn-outline:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--color-ink-black);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-md);
+}
+
+/* Forms, Inputs, & Sliders */
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.form-control,
+.form-select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-inputs);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-subtle);
+}
+
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-ink-black);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  border-color: #ffffff;
+}
+
+/* Range Slider */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--text-subtle);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-ink-black);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] input[type="range"]::-webkit-slider-thumb {
+  background: #ffffff;
+  border-color: #111111;
+}
+
+/* Data Table Component */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-cards);
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-surface);
+}
+
+.dataset-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.dataset-table th {
+  background: var(--bg-surface-elevated);
+  padding: 10px 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+}
+
+.dataset-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.dataset-table tr:hover td {
+  background: var(--bg-surface-hover);
+}
+
+.dataset-table th.col-selected,
+.dataset-table td.col-selected {
+  background: var(--color-cream-paper) !important;
+  color: var(--color-ink-black) !important;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .dataset-table th.col-selected,
+[data-theme="dark"] .dataset-table td.col-selected {
+  background: var(--color-violet-shade) !important;
+  color: #ffffff !important;
+}
+
+/* Callout / Alert Box */
+.callout {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-cards);
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-sm);
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  border: 1px solid transparent;
+}
+
+.callout-icon {
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.callout-info {
+  background: var(--color-info-bg);
+  border-color: var(--color-info-border);
+  color: var(--color-info);
+}
+
+.callout-warning {
+  background: var(--color-warning-bg);
+  border-color: var(--color-warning-border);
+  color: var(--color-warning);
+}
+
+.callout-tip {
+  background: var(--color-success-bg);
+  border-color: var(--color-success-border);
+  color: var(--color-success);
+}
+
+/* Feedback Box (Quiz / Exercises) */
+.feedback-box {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-cards);
+  margin-top: var(--space-4);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  display: none;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.feedback-box.correct {
+  display: block;
+  background: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+  color: var(--color-success);
+}
+
+.feedback-box.incorrect {
+  display: block;
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  color: var(--color-danger);
+}
+
+/* Summary Panel */
+.summary-panel {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-cards);
+  padding: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+.summary-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: var(--text-main);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.summary-list li {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.summary-list li strong {
+  color: var(--text-main);
+}
+
+.summary-list li::before {
+  content: "→";
+  color: var(--color-ink-black);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .summary-list li::before {
+  color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.toast {
+  background: var(--color-ink-black);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: var(--radius-buttons);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] .toast {
+  background: #ffffff;
+  color: #111111;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Google Colab Companion Walkthrough Component
+   ========================================================================== */
+.colab-companion-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  margin-bottom: var(--space-8);
+}
+
+.colab-top-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(99, 102, 241, 0.08) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+[data-theme="dark"] .colab-top-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(99, 102, 241, 0.15) 100%);
+}
+
+.colab-brand-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.colab-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  font-size: 1.3rem;
+}
+
+[data-theme="dark"] .colab-logo-icon {
+  background: var(--color-obsidian-warm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.colab-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 16px;
+  background: #f59e0b;
+  color: #111827;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-buttons);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
+}
+
+.colab-launch-btn:hover {
+  background: #d97706;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.colab-step-tabs {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  background: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+  scrollbar-width: thin;
+}
+
+.colab-step-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pills);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.colab-step-btn:hover {
+  border-color: var(--color-ink-black);
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .colab-step-btn:hover {
+  border-color: #ffffff;
+}
+
+.colab-step-btn.active {
+  background: var(--color-ink-black);
+  color: #ffffff;
+  border-color: var(--color-ink-black);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .colab-step-btn.active {
+  background: #ffffff;
+  color: #111111;
+  border-color: #ffffff;
+}
+
+.colab-step-num {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.colab-step-btn.active .colab-step-num {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="dark"] .colab-step-btn.active .colab-step-num {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.colab-body {
+  padding: var(--space-6);
+}
+
+.colab-step-panel {
+  display: none;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.colab-step-panel.active {
+  display: block;
+}
+
+.colab-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.colab-code-wrap {
+  position: relative;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.colab-code-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--font-size-xs);
+  color: #94a3b8;
+}
+
+.colab-copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.colab-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.colab-code-pre {
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-family-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.colab-output-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  color: #38bdf8;
+  margin-top: var(--space-3);
+  overflow-x: auto;
+}
+
+.colab-insight-callout {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--color-brand-400);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-4);
+}
+
+.colab-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+

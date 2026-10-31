@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Fundamentals — Learning Lab</title>
+  <meta name="description" content="Pelajari struktur dataset bisnis, baris, kolom, tipe data statistik, serta perbedaan antara Fitur Input (X) dan Variabel Target (Y).">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-page-id="fundamentals">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="brand-link">
+          <div class="brand-icon">BA</div>
+          <div class="brand-info">
+            <h1>Learning Lab</h1>
+            <span>Business Analysis</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Progres Belajar</span>
+          <strong id="sidebar-progress-text">0% Selesai</strong>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="sidebar-progress-fill"></div>
+        </div>
+      </div>
+
+            <nav class="sidebar-nav">
+        <!-- Group 0: Dashboard -->
+        <div class="nav-group">
+          <ul class="nav-list">
+            <li>
+              <a href="../index.html" class="nav-item-link" data-lesson-id="dashboard">
+                <span class="nav-item-left"><span class="nav-icon">◎</span> Dashboard & Alur</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Mulai dari Sini -->
+        <div class="nav-group">
+          <div class="nav-group-title">Mulai dari Sini</div>
+          <ul class="nav-list">
+            <li>
+              <a href="intro.html" class="nav-item-link" data-lesson-id="intro">
+                <span class="nav-item-left"><span class="nav-icon">01</span> Pengantar BA & Kasus</span>
+                <span class="nav-status-badge" data-lesson-badge="intro">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Dasar Data -->
+        <div class="nav-group">
+          <div class="nav-group-title">Dasar Data</div>
+          <ul class="nav-list">
+            <li>
+              <a href="fundamentals.html" class="nav-item-link active" data-lesson-id="fundamentals">
+                <span class="nav-item-left"><span class="nav-icon">02</span> Data Fundamentals</span>
+                <span class="nav-status-badge" data-lesson-badge="fundamentals">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="exploration.html" class="nav-item-link" data-lesson-id="exploration">
+                <span class="nav-item-left"><span class="nav-icon">03</span> Data Exploration</span>
+                <span class="nav-status-badge" data-lesson-badge="exploration">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="preparation.html" class="nav-item-link" data-lesson-id="preparation">
+                <span class="nav-item-left"><span class="nav-icon">04</span> Data Preparation</span>
+                <span class="nav-status-badge" data-lesson-badge="preparation">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Metode Analisis -->
+        <div class="nav-group">
+          <div class="nav-group-title">Metode Analisis</div>
+          <ul class="nav-list">
+            <li>
+              <a href="method-explorer.html" class="nav-item-link" data-lesson-id="method-explorer">
+                <span class="nav-item-left"><span class="nav-icon">05</span> Method Explorer</span>
+                <span class="nav-status-badge" data-lesson-badge="method-explorer">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="regression.html" class="nav-item-link" data-lesson-id="regression">
+                <span class="nav-item-left"><span class="nav-icon">06</span> Regression Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="regression">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="classification.html" class="nav-item-link" data-lesson-id="classification">
+                <span class="nav-item-left"><span class="nav-icon">07</span> Classification Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="classification">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="clustering.html" class="nav-item-link" data-lesson-id="clustering">
+                <span class="nav-item-left"><span class="nav-icon">08</span> Clustering Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="clustering">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="association-rules.html" class="nav-item-link" data-lesson-id="association-rules">
+                <span class="nav-item-left"><span class="nav-icon">09</span> Association Rules</span>
+                <span class="nav-status-badge" data-lesson-badge="association-rules">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="ann.html" class="nav-item-link" data-lesson-id="ann">
+                <span class="nav-item-left"><span class="nav-icon">10</span> ANN Visualizer</span>
+                <span class="nav-status-badge" data-lesson-badge="ann">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="text-mining.html" class="nav-item-link" data-lesson-id="text-mining">
+                <span class="nav-item-left"><span class="nav-icon">11</span> Text Mining Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="text-mining">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Praktik & Evaluasi -->
+        <div class="nav-group">
+          <div class="nav-group-title">Praktik & Evaluasi</div>
+          <ul class="nav-list">
+            <li>
+              <a href="project-workspace.html" class="nav-item-link" data-lesson-id="project-workspace">
+                <span class="nav-item-left"><span class="nav-icon">12</span> Project Workspace</span>
+                <span class="nav-status-badge" data-lesson-badge="project-workspace">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="quiz.html" class="nav-item-link" data-lesson-id="quiz">
+                <span class="nav-item-left"><span class="nav-icon">✓</span> Kuis & Review</span>
+                <span class="nav-status-badge" data-lesson-badge="quiz">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" aria-label="Buka Menu">☰</button>
+          <div class="breadcrumbs">
+            <a href="../index.html">Beranda</a>
+            <span class="separator">/</span>
+            <span>Dasar Data</span>
+            <span class="separator">/</span>
+            <span class="current">Data Fundamentals</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button id="btn-toggle-complete" class="complete-toggle-btn">
+            <span>○</span> Tandai Selesai
+          </button>
+          <button id="theme-toggle-btn" class="theme-toggle-btn">
+            <span class="icon">☀️</span> Mode Terang
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <div class="page-category-tag">Modul 02 • Anatomi Data</div>
+          <h1 class="page-title">Data Fundamentals: Baris, Kolom & Variabel</h1>
+          <p class="page-lead">
+            Sebelum menjalankan model apa pun, Anda harus memahami struktur tabel data: apa arti setiap kolom, tipe data statistiknya, serta membedakan mana variabel yang menjadi masukan (Fitur) dan mana yang menjadi sasaran prediksi (Target).
+          </p>
+        </div>
+
+        <!-- Learning Objective Card -->
+        <div class="learning-objective-card">
+          <div class="objective-icon">📋</div>
+          <div class="objective-content">
+            <h3>Tujuan Pembelajaran Modul Ini:</h3>
+            <ul class="objective-list">
+              <li>Menjelaskan perbedaan mendasar antara Baris (Record/Observasi) dan Kolom (Field/Variabel).</li>
+              <li>Mengidentifikasi tipe data statistik: Numerik (Diskrit vs Kontinu) dan Kategorikal (Nominal vs Ordinal).</li>
+              <li>Menentukan peran kolom dalam bisnis: Fitur Bebas (Input / X) vs Variabel Terikat (Target / Y).</li>
+              <li>Menggunakan Table Inspector interaktif pada dataset Kedai Kopi Senja.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Interactive Column Inspector -->
+        <div class="card" style="margin-bottom: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2);">
+            <div>
+              <span class="badge badge-teal">Interaktif</span>
+              <h2 class="card-title" style="margin-top: 4px;">Dataset Kedai Kopi Senja — Column Inspector</h2>
+              <p style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                Klik pada <strong>judul kolom</strong> atau sel tabel di bawah untuk melihat detail statistik dan peran bisnisnya pada panel di sebelah kanan:
+              </p>
+            </div>
+            <span class="badge badge-brand">File: data/coffee_sales.csv</span>
+          </div>
+
+          <div class="column-inspector-grid">
+            <!-- Table View -->
+            <div class="table-responsive">
+              <table class="dataset-table">
+                <thead id="fundamentals-thead">
+                  <!-- Rendered by JS -->
+                </thead>
+                <tbody id="fundamentals-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+              <div style="padding: var(--space-2) var(--space-3); font-size: 0.72rem; color: var(--text-subtle); background: var(--bg-surface-elevated);">
+                Menampilkan 7 baris pertama untuk demonstrasi struktur kolom.
+              </div>
+            </div>
+
+            <!-- Inspector Details Panel -->
+            <div class="inspector-panel">
+              <div class="inspector-header">
+                <span class="badge badge-brand">Detail Kolom Terpilih</span>
+                <h3 id="inspect-col-name" class="inspector-col-title" style="margin-top: 6px;">biaya_iklan_ribu</h3>
+              </div>
+
+              <div class="inspector-detail-row">
+                <span class="inspector-detail-label">Makna Bisnis:</span>
+                <div id="inspect-col-meaning" class="inspector-detail-val">
+                  Anggaran belanja iklan digital harian dalam ribuan Rupiah.
+                </div>
+              </div>
+
+              <div class="inspector-detail-row">
+                <span class="inspector-detail-label">Tipe Data Statistik:</span>
+                <div id="inspect-col-type" class="inspector-detail-val">
+                  Numerik (Kontinu / Rasio)
+                </div>
+              </div>
+
+              <div class="inspector-detail-row">
+                <span class="inspector-detail-label">Contoh Nilai:</span>
+                <div id="inspect-col-examples" class="inspector-detail-val">
+                  10, 20, 30, 40, 50
+                </div>
+              </div>
+
+              <div class="inspector-detail-row">
+                <span class="inspector-detail-label">Peran dalam Model Analisis:</span>
+                <div id="inspect-col-role" class="inspector-detail-val" style="color: var(--color-brand-300);">
+                  Ideal sebagai Variabel Bebas (Fitur Input / X).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Feature vs Target Exercise -->
+        <div class="try-it-panel">
+          <div class="try-it-header">
+            <div>
+              <span class="badge badge-brand">Latihan Pengambilan Keputusan</span>
+              <h2 class="try-it-title" style="margin-top: 4px;">🎯 Tentukan Variabel Input (X) vs Target (Y)</h2>
+              <p style="font-size: var(--font-size-xs); color: var(--text-muted);">
+                Skenario Bisnis: Manajemen Kedai Kopi Senja mengajukan pertanyaan: <em>"Berapa perkiraan jumlah produk yang terjual jika kita menaikkan biaya promosi iklan harian dan mengaktifkan voucher diskon?"</em>
+              </p>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-4);">
+            <!-- Target Variable Selection -->
+            <div style="background: var(--bg-surface); padding: var(--space-4); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+              <h4 style="font-size: var(--font-size-sm); color: #ffffff; margin-bottom: var(--space-3);">
+                1. Pilih Variabel Target / Y (Pilih Satu):
+              </h4>
+              <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="radio" name="target_col" value="hari"> <code>hari</code> (Hari & Minggu)
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="radio" name="target_col" value="biaya_iklan_ribu"> <code>biaya_iklan_ribu</code> (Biaya Iklan)
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="radio" name="target_col" value="produk_terjual"> <code>produk_terjual</code> (Kuantitas Cup Terjual)
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="radio" name="target_col" value="promo_aktif"> <code>promo_aktif</code> (Status Promo)
+                </label>
+              </div>
+            </div>
+
+            <!-- Input Features Selection -->
+            <div style="background: var(--bg-surface); padding: var(--space-4); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+              <h4 style="font-size: var(--font-size-sm); color: #ffffff; margin-bottom: var(--space-3);">
+                2. Pilih Fitur Input / X (Boleh Lebih dari Satu):
+              </h4>
+              <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="checkbox" name="feature_col" value="biaya_iklan_ribu"> <code>biaya_iklan_ribu</code> (Biaya Iklan)
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="checkbox" name="feature_col" value="promo_aktif"> <code>promo_aktif</code> (Status Promo)
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="checkbox" name="feature_col" value="pengunjung"> <code>pengunjung</code> (Estimasi Pengunjung)
+                </label>
+                <label style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer;">
+                  <input type="checkbox" name="feature_col" value="produk_terjual"> <code>produk_terjual</code> (Kuantitas Terjual)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: var(--space-6); display: flex; justify-content: flex-end;">
+            <button id="btn-check-variables" class="btn btn-primary">Validasi Pilihan Saya ✓</button>
+          </div>
+
+          <div id="variable-exercise-feedback" class="feedback-box"></div>
+        </div>
+
+        <!-- Summary Panel -->
+        <div class="summary-panel">
+          <h3 class="summary-title">📌 Ringkasan Penting Materi Ini</h3>
+          <ul class="summary-list">
+            <li><strong>Baris adalah observasi:</strong> Tiap baris merepresentasikan 1 entitas waktu atau transaksi kasir.</li>
+            <li><strong>Kolom adalah variabel:</strong> Karakteristik yang diukur, memiliki tipe data statistik tertentu (numerik atau kategorikal).</li>
+            <li><strong>Target ditentukan oleh pertanyaan bisnis:</strong> Kolom yang sama bisa menjadi target di satu kasus, namun menjadi fitur input di kasus lain.</li>
+          </ul>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <a id="btn-lesson-prev" class="lesson-nav-btn prev">← Pengantar BA</a>
+          <a id="btn-lesson-next" class="lesson-nav-btn next">Lanjutkan ke Data Exploration →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/data-loader.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/fundamentals.js"></script>
+</body>
+</html>

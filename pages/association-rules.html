@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Association Rules Lab — Learning Lab</title>
+  <meta name="description" content="Temukan pola kombinasi produk kasir yang sering dibeli bersamaan dengan algoritma Apriori, hitung Support, Confidence, dan Lift Ratio.">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages.css">
+</head>
+<body data-page-id="association-rules">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="../index.html" class="brand-link">
+          <div class="brand-icon">BA</div>
+          <div class="brand-info">
+            <h1>Learning Lab</h1>
+            <span>Business Analysis</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-progress">
+        <div class="progress-header">
+          <span>Progres Belajar</span>
+          <strong id="sidebar-progress-text">0% Selesai</strong>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="sidebar-progress-fill"></div>
+        </div>
+      </div>
+
+            <nav class="sidebar-nav">
+        <!-- Group 0: Dashboard -->
+        <div class="nav-group">
+          <ul class="nav-list">
+            <li>
+              <a href="../index.html" class="nav-item-link" data-lesson-id="dashboard">
+                <span class="nav-item-left"><span class="nav-icon">◎</span> Dashboard & Alur</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Mulai dari Sini -->
+        <div class="nav-group">
+          <div class="nav-group-title">Mulai dari Sini</div>
+          <ul class="nav-list">
+            <li>
+              <a href="intro.html" class="nav-item-link" data-lesson-id="intro">
+                <span class="nav-item-left"><span class="nav-icon">01</span> Pengantar BA & Kasus</span>
+                <span class="nav-status-badge" data-lesson-badge="intro">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Dasar Data -->
+        <div class="nav-group">
+          <div class="nav-group-title">Dasar Data</div>
+          <ul class="nav-list">
+            <li>
+              <a href="fundamentals.html" class="nav-item-link" data-lesson-id="fundamentals">
+                <span class="nav-item-left"><span class="nav-icon">02</span> Data Fundamentals</span>
+                <span class="nav-status-badge" data-lesson-badge="fundamentals">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="exploration.html" class="nav-item-link" data-lesson-id="exploration">
+                <span class="nav-item-left"><span class="nav-icon">03</span> Data Exploration</span>
+                <span class="nav-status-badge" data-lesson-badge="exploration">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="preparation.html" class="nav-item-link" data-lesson-id="preparation">
+                <span class="nav-item-left"><span class="nav-icon">04</span> Data Preparation</span>
+                <span class="nav-status-badge" data-lesson-badge="preparation">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Metode Analisis -->
+        <div class="nav-group">
+          <div class="nav-group-title">Metode Analisis</div>
+          <ul class="nav-list">
+            <li>
+              <a href="method-explorer.html" class="nav-item-link" data-lesson-id="method-explorer">
+                <span class="nav-item-left"><span class="nav-icon">05</span> Method Explorer</span>
+                <span class="nav-status-badge" data-lesson-badge="method-explorer">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="regression.html" class="nav-item-link" data-lesson-id="regression">
+                <span class="nav-item-left"><span class="nav-icon">06</span> Regression Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="regression">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="classification.html" class="nav-item-link" data-lesson-id="classification">
+                <span class="nav-item-left"><span class="nav-icon">07</span> Classification Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="classification">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="clustering.html" class="nav-item-link" data-lesson-id="clustering">
+                <span class="nav-item-left"><span class="nav-icon">08</span> Clustering Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="clustering">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="association-rules.html" class="nav-item-link active" data-lesson-id="association-rules">
+                <span class="nav-item-left"><span class="nav-icon">09</span> Association Rules</span>
+                <span class="nav-status-badge" data-lesson-badge="association-rules">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="ann.html" class="nav-item-link" data-lesson-id="ann">
+                <span class="nav-item-left"><span class="nav-icon">10</span> ANN Visualizer</span>
+                <span class="nav-status-badge" data-lesson-badge="ann">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="text-mining.html" class="nav-item-link" data-lesson-id="text-mining">
+                <span class="nav-item-left"><span class="nav-icon">11</span> Text Mining Lab</span>
+                <span class="nav-status-badge" data-lesson-badge="text-mining">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: Praktik & Evaluasi -->
+        <div class="nav-group">
+          <div class="nav-group-title">Praktik & Evaluasi</div>
+          <ul class="nav-list">
+            <li>
+              <a href="project-workspace.html" class="nav-item-link" data-lesson-id="project-workspace">
+                <span class="nav-item-left"><span class="nav-icon">12</span> Project Workspace</span>
+                <span class="nav-status-badge" data-lesson-badge="project-workspace">Belum</span>
+              </a>
+            </li>
+            <li>
+              <a href="quiz.html" class="nav-item-link" data-lesson-id="quiz">
+                <span class="nav-item-left"><span class="nav-icon">✓</span> Kuis & Review</span>
+                <span class="nav-status-badge" data-lesson-badge="quiz">Belum</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="sidebar-backdrop"></div>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-toggle" aria-label="Buka Menu">☰</button>
+          <div class="breadcrumbs">
+            <a href="../index.html">Beranda</a>
+            <span class="separator">/</span>
+            <span>Metode Analisis</span>
+            <span class="separator">/</span>
+            <span class="current">Association Rules Lab</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button id="btn-toggle-complete" class="complete-toggle-btn">
+            <span>○</span> Tandai Selesai
+          </button>
+          <button id="theme-toggle-btn" class="theme-toggle-btn">
+            <span class="icon">☀️</span> Mode Terang
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="page-header">
+          <div class="page-category-tag">Modul 09 • Analisis Keranjang Belanja</div>
+          <h1 class="page-title">Association Rules Lab: Market Basket Analysis & Apriori</h1>
+          <p class="page-lead">
+            Market Basket Analysis membantu peritel dan pemilik cafe menemukan kombinasi item menu yang sering dibeli bersamaan dalam satu struk kasir. Pelajari cara menghitung Support, Confidence, dan Lift Ratio guna menyusun paket bundling promosi yang terbukti menaikkan omset.
+          </p>
+        </div>
+
+        <!-- Learning Objective Card -->
+        <div class="learning-objective-card">
+          <div class="objective-icon">🛒</div>
+          <div class="objective-content">
+            <h3>Tujuan Pembelajaran Modul Ini:</h3>
+            <ul class="objective-list">
+              <li>Memahami struktur data transaksi keranjang belanja (Market Basket format).</li>
+              <li>Menghitung metrik fundamental Apriori: <strong>Support</strong>, <strong>Confidence</strong>, dan <strong>Lift Ratio</strong>.</li>
+              <li>Menginterpretasikan nilai Lift: Lift &gt; 1 (sinergi positif), Lift = 1 (independen), Lift &lt; 1 (substitusi).</li>
+              <li>Menerapkan aturan asosiasi untuk strategi penataan etalase kasir dan bundling promo sore.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Transaction Samples & Rule Explorer Side-by-Side -->
+        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-6); margin-bottom: var(--space-8);">
+          <!-- Left: Transactions Sample -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+              <div>
+                <span class="badge badge-brand">Data Kasir Kasus</span>
+                <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: #ffffff; margin-top: 2px;">
+                  Sampel Struk Transaksi POS
+                </h3>
+              </div>
+              <span class="badge badge-teal">Total 20 Struk</span>
+            </div>
+            <div class="table-responsive">
+              <table class="dataset-table">
+                <thead>
+                  <tr>
+                    <th>No. Struk</th>
+                    <th>Daftar Item dalam Keranjang</th>
+                  </tr>
+                </thead>
+                <tbody id="transactions-preview-tbody">
+                  <!-- Rendered by association-rules.js -->
+                </tbody>
+              </table>
+            </div>
+            <div style="font-size: var(--font-size-xs); color: var(--text-subtle); margin-top: var(--space-2);">
+              Menampilkan 8 transaksi pertama untuk ilustrasi format basket.
+            </div>
+          </div>
+
+          <!-- Right: Rules Browser -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-3);">
+              <div>
+                <span class="badge badge-verified">Aturan Terkalkulasi</span>
+                <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: #ffffff; margin-top: 2px;">
+                  Pilih Aturan Asosiasi {A} &rarr; {B}
+                </h3>
+              </div>
+              <span style="font-size: var(--font-size-xs); color: var(--text-muted);">Klik aturan untuk rincian</span>
+            </div>
+
+            <div id="association-rules-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Rule Inspector Panel -->
+        <div class="card" style="background: rgba(99, 102, 241, 0.08); border-color: var(--color-brand-400); margin-bottom: var(--space-8);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2);">
+            <div>
+              <span class="badge badge-brand">Inspeksi Rincian Aturan Terpilih</span>
+              <h2 id="rule-detail-title" style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); color: #ffffff; margin-top: 4px;">
+                {Croissant Mentega} &rarr; {Kopi Susu Senja}
+              </h2>
+            </div>
+          </div>
+
+          <!-- Metric Cards for this Rule -->
+          <div class="metrics-grid" style="margin-bottom: var(--space-5);">
+            <div class="metric-card" style="background: var(--bg-surface);">
+              <span class="metric-label">Support</span>
+              <div id="rule-detail-support" class="metric-value" style="color: var(--color-accent-teal);">45.0%</div>
+              <span class="metric-sub">Peluang keduanya muncul bersama</span>
+            </div>
+            <div class="metric-card" style="background: var(--bg-surface);">
+              <span class="metric-label">Confidence</span>
+              <div id="rule-detail-confidence" class="metric-value" style="color: var(--color-success);">81.8%</div>
+              <span class="metric-sub">Beli A, pasti beli B</span>
+            </div>
+            <div class="metric-card" style="background: var(--bg-surface);">
+              <span class="metric-label">Lift Ratio</span>
+              <div id="rule-detail-lift" class="metric-value" style="color: #f59e0b;">1.17x</div>
+              <span class="metric-sub">&gt; 1 artinya korelasi positif kuat</span>
+            </div>
+          </div>
+
+          <!-- Step-by-Step Calculation Formula -->
+          <div style="background: var(--bg-surface); padding: var(--space-4); border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); margin-bottom: var(--space-4);">
+            <strong style="color: #ffffff; font-size: var(--font-size-sm); display: block; margin-bottom: var(--space-2);">
+              Langkah Perhitungan Matematis (Data 20 Transaksi):
+            </strong>
+            <div id="rule-calc-steps">
+              <!-- Dynamically rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Retail Recommendation -->
+          <div id="rule-business-reco" class="callout callout-tip" style="margin-bottom: 0;">
+            <!-- Dynamically rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Exercise -->
+        <div class="try-it-panel">
+          <div class="try-it-header">
+            <div>
+              <span class="badge badge-brand">Uji Analisis Retail</span>
+              <h2 class="try-it-title" style="margin-top: 4px;">🎯 Pemahaman Metrik: Mengapa Confidence Saja Tidak Cukup?</h2>
+            </div>
+          </div>
+
+          <div style="font-size: var(--font-size-base); font-weight: 600; color: #ffffff; margin-bottom: var(--space-3);">
+            Jika aturan {Roti} &rarr; {Air Mineral} memiliki Confidence 90%, mengapa pemilik cafe tidak boleh langsung menyimpulkan bahwa Roti memicu pembelian Air Mineral?
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-4);">
+            <label style="display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer; background: var(--bg-surface); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <input type="radio" name="assoc_q" value="opt_wrong_1">
+              <span>Karena air mineral dilarang untuk dijual bersamaan dengan produk bakery.</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer; background: var(--bg-surface); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <input type="radio" name="assoc_q" value="opt_lift_gt_1">
+              <span>Karena jika 90% seluruh pengunjung cafe memang selalu membeli air mineral, maka nilai Lift-nya hanya mendekati 1 (hanya kebetulan populer, bukan sinergi khusus).</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: var(--space-3); font-size: var(--font-size-sm); color: var(--text-muted); cursor: pointer; background: var(--bg-surface); padding: var(--space-3) var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <input type="radio" name="assoc_q" value="opt_wrong_2">
+              <span>Karena algoritma Apriori hanya berlaku jika jumlah transaksi di atas 1 juta baris.</span>
+            </label>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button id="btn-check-assoc-exercise" class="btn btn-primary">Validasi Jawaban ✓</button>
+          </div>
+
+          <div id="assoc-exercise-feedback" class="feedback-box"></div>
+        </div>
+
+        <!-- Summary Panel -->
+        <div class="summary-panel">
+          <h3 class="summary-title">📌 Ringkasan Penting Materi Ini</h3>
+          <ul class="summary-list">
+            <li><strong>Support:</strong> Seberapa sering itemset muncul di seluruh transaksi kasir.</li>
+            <li><strong>Confidence:</strong> Kepastian bahwa pembeli item A juga membeli item B.</li>
+            <li><strong>Lift Ratio &gt; 1 adalah kunci bundling:</strong> Membuktikan adanya daya tarik bersama yang nyata, bukan sekadar produk yang memang laku umum.</li>
+          </ul>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <a id="btn-lesson-prev" class="lesson-nav-btn prev">← Clustering Lab</a>
+          <a id="btn-lesson-next" class="lesson-nav-btn next">Lanjutkan ke ANN Visualizer →</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../assets/js/data-loader.js"></script>
+  <script src="../assets/js/progress.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script src="../assets/js/association-rules.js"></script>
+</body>
+</html>

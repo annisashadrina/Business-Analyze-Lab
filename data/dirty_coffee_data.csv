@@ -1,0 +1,11 @@
+id_transaksi,tanggal,cabang,biaya_iklan_ribu,pengunjung,produk_terjual,status_promo
+TRX-101,2026-10-01,Surabaya,20,45,30,Tidak
+TRX-102,2026-10-02,surabaya,30,58,40,Ya
+TRX-103,2026-10-03,SURABAYA,10,28,20,Tidak
+TRX-103,2026-10-03,SURABAYA,10,28,20,Tidak
+TRX-104,2026-10-04,Surabaya,,72,55,Ya
+TRX-105,2026-10-05,Surabaya,50,9999,-10,Ya
+TRX-106,2026-10-06,Malang,65,110,75,Ya
+TRX-107,2026-10-07,malang,55,95,68,Ya
+TRX-108,2026-10-08,Surabaya,25,50,35,Tidak
+TRX-109,2026-10-09,Malang,35,62,44,Ya
